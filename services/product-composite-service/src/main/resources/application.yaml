@@ -16,3 +16,22 @@ logging:
   level:
     root: INFO
     com.habeebcycle: DEBUG
+
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 8080
+
+app:
+  product-service:
+    host: product-service
+    port: 8080
+  recommendation-service:
+    host: recommendation-service
+    port: 8080
+  review-service:
+    host: review-service
+    port: 8080

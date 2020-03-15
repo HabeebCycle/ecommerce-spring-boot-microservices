@@ -1,6 +1,14 @@
 server:
   port: 7003
+
 logging:
   level:
     root: INFO
     com.habeebcycle: DEBUG
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 8080
