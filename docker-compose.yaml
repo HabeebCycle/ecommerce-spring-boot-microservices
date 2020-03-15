@@ -4,25 +4,21 @@ services:
 
   product-service:
     build: services/product-service
-    mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   recommendation-service:
     build: services/recommendation-service
-    mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   review-service:
     build: services/review-service
-    mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   product-composite-service:
     build: services/product-composite-service
-    mem_limit: 350m
     ports:
       - "8080:8080"
     environment:
