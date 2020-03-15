@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api" />
+        <module name="microservices" />
+        <module name="product-composite-service" />
+        <module name="product-service" />
+        <module name="recommendation-service" />
+        <module name="review-service" />
+        <module name="util" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
