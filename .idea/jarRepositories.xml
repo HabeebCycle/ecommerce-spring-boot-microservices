@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="38d39b92-910d-49a3-a328-c3e21554caca" />
+      <option name="name" value="38d39b92-910d-49a3-a328-c3e21554caca" />
+      <option name="url" value="http://maven.icm.edu.pl/artifactory/repo/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="50037854-ce8e-41e5-be63-f5896b09636f" />
+      <option name="name" value="50037854-ce8e-41e5-be63-f5896b09636f" />
+      <option name="url" value="http://oss.jfrog.org/artifactory/oss-snapshot-local/" />
+    </remote-repository>
+  </component>
+</project>
