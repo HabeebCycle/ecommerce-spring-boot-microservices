@@ -2,61 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/RecommendationSummary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ReviewSummary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ServiceAddresses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/ProductUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/Recommendation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/RecommendationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/review/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/review/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/components/ProductCompositeIntegration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/services/RecommendationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/services/ReviewServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/exceptions/InternalServerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/exceptions/InvalidInputException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/exceptions/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/http/GlobalControllerExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/http/HttpErrorInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/http/ServiceUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReviewServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReviewServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/services/ReviewServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -103,7 +49,7 @@
       <file leaf-file-name="ProductCompositeServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="306">
               <caret line="36" column="106" selection-start-line="36" selection-start-column="106" selection-end-line="36" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -112,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductCompositeIntegration.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductCompositeIntegration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/components/ProductCompositeIntegration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
+            <state relative-caret-position="1326">
               <caret line="118" column="51" selection-start-line="118" selection-start-column="51" selection-end-line="118" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -514,13 +460,13 @@
       <item itemvalue="Spring Boot.UtilApplication" />
       <item itemvalue="Spring Boot.ApiApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
-      <item itemvalue="JUnit.ProductServiceApplicationTests" />
       <item itemvalue="Spring Boot.RecommendationServiceApplication" />
-      <item itemvalue="JUnit.RecommendationServiceApplicationTests" />
       <item itemvalue="Spring Boot.ReviewServiceApplication" />
+      <item itemvalue="Spring Boot.ProductCompositeServiceApplication" />
+      <item itemvalue="JUnit.ProductServiceApplicationTests" />
+      <item itemvalue="JUnit.RecommendationServiceApplicationTests" />
       <item itemvalue="JUnit.ReviewServiceApplicationTests" />
       <item itemvalue="JUnit.ReviewServiceApplicationTests.getRecommendationsInternalServerError" />
-      <item itemvalue="Spring Boot.ProductCompositeServiceApplication" />
       <item itemvalue="JUnit.ProductCompositeServiceApplicationTests" />
     </list>
     <recent_temporary>
@@ -581,7 +527,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18246000" />
+    <option name="totallyTimeSpent" value="18553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -603,21 +549,47 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run Dashboard" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32963374" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32963374" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32963374" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.32963374" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Bean Validation" order="3" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,9 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="8" selection-start-column="8" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,9 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -730,20 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,9 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,9 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="8" selection-start-column="8" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,9 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -861,9 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="33" column="121" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="121" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,9 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="92" column="115" selection-start-line="92" selection-start-column="50" selection-end-line="92" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -992,7 +929,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="306">
           <caret line="36" column="106" selection-start-line="36" selection-start-column="106" selection-end-line="36" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1009,7 +946,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/components/ProductCompositeIntegration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
+        <state relative-caret-position="1326">
           <caret line="118" column="51" selection-start-line="118" selection-start-column="51" selection-end-line="118" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
