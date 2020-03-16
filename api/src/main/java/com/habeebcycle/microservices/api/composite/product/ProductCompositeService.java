@@ -1,9 +1,11 @@
 package com.habeebcycle.microservices.api.composite.product;
 
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -15,6 +17,7 @@ public interface ProductCompositeService {
      * @param productId the id of product requested
      * @return the composite product info, if found, else null
      */
+
     @ApiOperation(
             value = "${api.product-composite.get-composite-product.description}",
             notes = "${api.product-composite.get-composite-product.notes}")
@@ -24,6 +27,7 @@ public interface ProductCompositeService {
             @ApiResponse(code = 422, message = "Unprocessable entity, input parameters caused the processing to fails. See response message for more information."),
             @ApiResponse(code = 500, message = "Internal Server Error, server processing to fails. See response message for more information.")
     })
+
     @GetMapping(
             value    = "/product-composite/{productId}",
             produces = "application/json")
