@@ -64,13 +64,11 @@
             <groupId>com.habeebcycle.microservices</groupId>
             <artifactId>api</artifactId>
             <version>${module.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.habeebcycle.microservices</groupId>
             <artifactId>util</artifactId>
             <version>${module.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -8,5 +8,18 @@
     <artifactId>microservices</artifactId>
     <version>1.0</version>
 
+    <packaging>pom</packaging>
+
+    <name>parent-project</name>
+
+    <modules>
+        <module>services/product-composite-service</module>
+        <module>services/product-service</module>
+        <module>services/recommendation-service</module>
+        <module>services/review-service</module>
+        <module>api</module>
+        <module>util</module>
+    </modules>
+
 
 </project>

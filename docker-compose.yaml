@@ -6,16 +6,23 @@ services:
     build: services/product-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mongodb
 
   recommendation-service:
     build: services/recommendation-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mongodb
 
   review-service:
     build: services/review-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      mysql:
+        condition: service_healthy
 
   product-composite-service:
     build: services/product-composite-service
@@ -23,3 +30,26 @@ services:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+
+  # $ mongo
+    mongodb:
+      image: mongo:3.6.9
+      ports:
+        - "27017:27017"
+      command: mongod --smallfiles
+
+    # $ mysql -uroot -h127.0.0.1 -p
+    mysql:
+      image: mysql:5.7
+      ports:
+        - "3306:3306"
+      environment:
+        - MYSQL_ROOT_PASSWORD=rootpwd
+        - MYSQL_DATABASE=review-db
+        - MYSQL_USER=user
+        - MYSQL_PASSWORD=pwd
+      healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-uuser", "-ppwd", "-h", "localhost"]
+        interval: 10s
+        timeout: 5s
+        retries: 10

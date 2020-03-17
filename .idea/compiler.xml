@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
-        <module name="microservices" />
         <module name="product-composite-service" />
         <module name="product-service" />
         <module name="recommendation-service" />
