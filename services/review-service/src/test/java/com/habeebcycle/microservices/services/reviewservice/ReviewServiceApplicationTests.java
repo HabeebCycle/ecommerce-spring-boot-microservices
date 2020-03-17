@@ -1,110 +1,156 @@
 package com.habeebcycle.microservices.services.reviewservice;
 
+import com.habeebcycle.microservices.api.core.review.Review;
+import com.habeebcycle.microservices.services.reviewservice.repository.ReviewRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static reactor.core.publisher.Mono.just;
 
-@SpringBootTest(webEnvironment=RANDOM_PORT)
+@SpringBootTest(webEnvironment=RANDOM_PORT, properties = {"spring.datasource.url=jdbc:h2:mem:review-db"})
 class ReviewServiceApplicationTests {
 
     @Autowired
     private WebTestClient client;
 
-    @Test
-    void getReviewsByProductId() {
+    @Autowired
+    private ReviewRepository repository;
 
-        int productId = 1;
 
-        client.get()
-                .uri("/review?productId=" + productId)
-                .accept(APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectHeader().contentType(APPLICATION_JSON)
-                .expectBody()
-                .jsonPath("$.length()").isEqualTo(3)
-                .jsonPath("$[0].productId").isEqualTo(productId);
+    @BeforeEach
+    public void setupDb() {
+        repository.deleteAll();
     }
 
     @Test
-    void getReviewsMissingParameter() {
+    public void getReviewsByProductId() {
 
-        client.get()
-                .uri("/review")
-                .accept(APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isEqualTo(BAD_REQUEST)
-                .expectHeader().contentType(APPLICATION_JSON)
-                .expectBody()
+        int productId = 1;
+
+        assertEquals(0, repository.findByProductId(productId).size());
+
+        postAndVerifyReview(productId, 1, OK);
+        postAndVerifyReview(productId, 2, OK);
+        postAndVerifyReview(productId, 3, OK);
+
+        assertEquals(3, repository.findByProductId(productId).size());
+
+        getAndVerifyReviewsByProductId(productId, OK)
+                .jsonPath("$.length()").isEqualTo(3)
+                .jsonPath("$[2].productId").isEqualTo(productId)
+                .jsonPath("$[2].reviewId").isEqualTo(3);
+    }
+
+    @Test
+    public void duplicateError() {
+
+        int productId = 1;
+        int reviewId = 1;
+
+        assertEquals(0, repository.count());
+
+        postAndVerifyReview(productId, reviewId, OK)
+                .jsonPath("$.productId").isEqualTo(productId)
+                .jsonPath("$.reviewId").isEqualTo(reviewId);
+
+        assertEquals(1, repository.count());
+
+        postAndVerifyReview(productId, reviewId, UNPROCESSABLE_ENTITY)
+                .jsonPath("$.path").isEqualTo("/review")
+                .jsonPath("$.message").isEqualTo("Duplicate key, Product Id: 1, Review Id: 1");
+
+        assertEquals(1, repository.count());
+    }
+
+    @Test
+    public void deleteReviews() {
+
+        int productId = 1;
+        int recommendationId = 1;
+
+        postAndVerifyReview(productId, recommendationId, OK);
+        assertEquals(1, repository.findByProductId(productId).size());
+
+        deleteAndVerifyReviewsByProductId(productId, OK);
+        assertEquals(0, repository.findByProductId(productId).size());
+
+        deleteAndVerifyReviewsByProductId(productId, OK);
+    }
+
+    @Test
+    public void getReviewsMissingParameter() {
+
+        getAndVerifyReviewsByProductId("", BAD_REQUEST)
                 .jsonPath("$.path").isEqualTo("/review")
                 .jsonPath("$.message").isEqualTo("Required int parameter 'productId' is not present");
     }
 
     @Test
-    void getReviewsInvalidParameter() {
+    public void getReviewsInvalidParameter() {
 
-        client.get()
-                .uri("/review?productId=no-integer")
-                .accept(APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isEqualTo(BAD_REQUEST)
-                .expectHeader().contentType(APPLICATION_JSON)
-                .expectBody()
+        getAndVerifyReviewsByProductId("?productId=no-integer", BAD_REQUEST)
                 .jsonPath("$.path").isEqualTo("/review")
                 .jsonPath("$.message").isEqualTo("Type mismatch.");
     }
 
     @Test
-    void getReviewsNotFound() {
+    public void getReviewsNotFound() {
 
-        int productIdNotFound = 213;
-
-        client.get()
-                .uri("/review?productId=" + productIdNotFound)
-                .accept(APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectHeader().contentType(APPLICATION_JSON)
-                .expectBody()
+        getAndVerifyReviewsByProductId("?productId=213", OK)
                 .jsonPath("$.length()").isEqualTo(0);
     }
 
     @Test
-    void getReviewsInvalidParameterNegativeValue() {
+    public void getReviewsInvalidParameterNegativeValue() {
 
         int productIdInvalid = -1;
 
-        client.get()
-                .uri("/review?productId=" + productIdInvalid)
-                .accept(APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isEqualTo(UNPROCESSABLE_ENTITY)
-                .expectHeader().contentType(APPLICATION_JSON)
-                .expectBody()
+        getAndVerifyReviewsByProductId("?productId=" + productIdInvalid, UNPROCESSABLE_ENTITY)
                 .jsonPath("$.path").isEqualTo("/review")
                 .jsonPath("$.message").isEqualTo("Invalid productId: " + productIdInvalid);
     }
 
-    @Test
-    void getRecommendationsInternalServerError(){
-        int productIdServerError = 101;
+    private WebTestClient.BodyContentSpec getAndVerifyReviewsByProductId(int productId, HttpStatus expectedStatus) {
+        return getAndVerifyReviewsByProductId("?productId=" + productId, expectedStatus);
+    }
 
-        client.get()
-                .uri("/review?productId=" + productIdServerError)
+    private WebTestClient.BodyContentSpec getAndVerifyReviewsByProductId(String productIdQuery, HttpStatus expectedStatus) {
+        return client.get()
+                .uri("/review" + productIdQuery)
                 .accept(APPLICATION_JSON)
                 .exchange()
-                .expectStatus().isEqualTo(INTERNAL_SERVER_ERROR)
+                .expectStatus().isEqualTo(expectedStatus)
                 .expectHeader().contentType(APPLICATION_JSON)
-                .expectBody()
-                .jsonPath("$.path").isEqualTo("/review")
-                .jsonPath("$.message").isEqualTo("Internal Server Error 500 for productId: " + productIdServerError);
+                .expectBody();
+    }
+
+    private WebTestClient.BodyContentSpec postAndVerifyReview(int productId, int reviewId, HttpStatus expectedStatus) {
+        Review review = new Review(productId, reviewId, "Author " + reviewId, "Subject " + reviewId, "Content " + reviewId, "SA");
+        return client.post()
+                .uri("/review")
+                .body(just(review), Review.class)
+                .accept(APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isEqualTo(expectedStatus)
+                .expectHeader().contentType(APPLICATION_JSON)
+                .expectBody();
+    }
+
+    private WebTestClient.BodyContentSpec deleteAndVerifyReviewsByProductId(int productId, HttpStatus expectedStatus) {
+        return client.delete()
+                .uri("/review?productId=" + productId)
+                .accept(APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isEqualTo(expectedStatus)
+                .expectBody();
     }
 
 }
