@@ -5,13 +5,16 @@ import com.habeebcycle.microservices.api.core.ProductUtil;
 import java.util.List;
 
 public class ProductAggregate {
-    private final int productId;
-    private final String name;
-    private final double price;
-    private final int weight;
-    private final List<RecommendationSummary> recommendations;
-    private final List<ReviewSummary> reviews;
-    private final ServiceAddresses serviceAddresses;
+    private int productId;
+    private String name;
+    private double price;
+    private int weight;
+    private List<RecommendationSummary> recommendations;
+    private List<ReviewSummary> reviews;
+    private ServiceAddresses serviceAddresses;
+
+    public ProductAggregate() {
+    }
 
     public ProductAggregate(
             int productId,
@@ -57,5 +60,33 @@ public class ProductAggregate {
 
     public ServiceAddresses getServiceAddresses() {
         return serviceAddresses;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public void setRecommendations(List<RecommendationSummary> recommendations) {
+        this.recommendations = recommendations;
+    }
+
+    public void setReviews(List<ReviewSummary> reviews) {
+        this.reviews = reviews;
+    }
+
+    public void setServiceAddresses(ServiceAddresses serviceAddresses) {
+        this.serviceAddresses = serviceAddresses;
     }
 }
