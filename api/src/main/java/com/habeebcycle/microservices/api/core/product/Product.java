@@ -3,11 +3,11 @@ package com.habeebcycle.microservices.api.core.product;
 import com.habeebcycle.microservices.api.core.ProductUtil;
 
 public class Product {
-    private final int productId;
-    private final String name;
-    private final int weight;
-    private final double price;
-    private final String serviceAddress;
+    private int productId;
+    private String name;
+    private int weight;
+    private double price;
+    private String serviceAddress;
 
     public Product() {
         productId = 0;
@@ -43,5 +43,25 @@ public class Product {
 
     public String getServiceAddress() {
         return serviceAddress;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setServiceAddress(String serviceAddress) {
+        this.serviceAddress = serviceAddress;
     }
 }
