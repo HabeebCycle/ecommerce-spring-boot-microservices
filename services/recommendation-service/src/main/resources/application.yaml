@@ -1,14 +1,23 @@
 server:
   port: 7002
 
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: recommendation-db
+
 logging:
   level:
     root: INFO
     com.habeebcycle: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
 ---
 spring:
   profiles: docker
+  data:
+    mongodb:
+      host: mongodb
 
 server:
   port: 8080
