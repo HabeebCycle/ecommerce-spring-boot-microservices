@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/util/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/util/target/" />
@@ -39,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            <state relative-caret-position="459">
+              <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -66,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="386">
@@ -75,33 +67,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/product-composite-service/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/product-composite-service/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
               <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductAggregate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductAggregate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-              <folding>
-                <element signature="e#1636#1637#0" expanded="true" />
-                <element signature="e#1676#1677#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
-                <element signature="e#1750#1751#0" expanded="true" />
-                <element signature="e#1784#1785#0" expanded="true" />
-                <element signature="e#1825#1826#0" expanded="true" />
-                <element signature="e#1861#1862#0" expanded="true" />
-                <element signature="e#2057#2058#0" expanded="true" />
-                <element signature="e#2095#2096#0" expanded="true" />
-                <element signature="e#2169#2170#0" expanded="true" />
-                <element signature="e#2225#2226#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -271,7 +246,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-66" />
     <option name="y" value="112" />
     <option name="width" value="1400" />
@@ -297,12 +272,13 @@
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="product-composite-service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -571,7 +547,7 @@
       <updated>1584185725122</updated>
       <workItem from="1584185734247" duration="9100000" />
       <workItem from="1584220891757" duration="9146000" />
-      <workItem from="1584344061553" duration="39318000" />
+      <workItem from="1584344061553" duration="40438000" />
     </task>
     <servers />
   </component>
@@ -608,10 +584,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74275000" />
+    <option name="totallyTimeSpent" value="75395000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -633,10 +610,10 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run Dashboard" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32963374" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32963374" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32963374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -661,26 +638,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/review/Review.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-          <folding>
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1539#1540#0" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/RecommendationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1174,13 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/product-composite-service.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1209,6 +1159,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="45" />
         </state>
       </provider>
     </entry>
