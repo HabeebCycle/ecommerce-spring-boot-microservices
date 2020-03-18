@@ -3,21 +3,21 @@ version: '3'
 services:
 
   product-service:
-    build: services/product-service
+    image: habeebcycle/product-service:v1
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - mongodb
 
   recommendation-service:
-    build: services/recommendation-service
+    image: habeebcycle/recommendation-service:v1
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - mongodb
 
   review-service:
-    build: services/review-service
+    image: habeebcycle/review-service:v1
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -25,7 +25,7 @@ services:
         condition: service_healthy
 
   product-composite-service:
-    build: services/product-composite-service
+    image: habeebcycle/product-composite-service:v1
     ports:
       - "8080:8080"
     environment:

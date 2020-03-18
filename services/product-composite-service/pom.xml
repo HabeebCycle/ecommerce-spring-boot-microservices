@@ -86,6 +86,30 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.1.0</version>
+                <configuration>
+                    <to>
+                        <image>docker.io/habeebcycle/product-composite-service:v1</image>
+                        <!--
+                        <auth>
+                            <username>${HUB_USERNAME}</username>
+                            <password>${HUB_PASSWORD}</password>
+                        </auth>
+                        -->
+                    </to>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
