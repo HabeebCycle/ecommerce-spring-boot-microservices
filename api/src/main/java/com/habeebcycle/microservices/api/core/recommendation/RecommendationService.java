@@ -1,8 +1,7 @@
 package com.habeebcycle.microservices.api.core.recommendation;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 public interface RecommendationService {
     /**
@@ -11,10 +10,11 @@ public interface RecommendationService {
      * @param productId the id of the product to the its recommendations
      * @return the list of recommendations
      */
+    //Using HTTP GET Method protocol
     @GetMapping(
             value    = "/recommendation",
             produces = "application/json")
-    List<Recommendation> getRecommendations(@RequestParam(value = "productId") int productId);
+    Flux<Recommendation> getRecommendations(@RequestParam(value = "productId") int productId);
 
     /**
      * Sample usage:
@@ -26,10 +26,7 @@ public interface RecommendationService {
      * @param body the valid recommendation to be created
      * @return the recommendation created
      */
-    @PostMapping(
-            value    = "/recommendation",
-            consumes = "application/json",
-            produces = "application/json")
+    //Using event-driven protocol
     Recommendation createRecommendation(@RequestBody Recommendation body);
 
     /**
@@ -39,6 +36,6 @@ public interface RecommendationService {
      *
      * @param productId the id of the product whose recommendation is to be deleted
      */
-    @DeleteMapping(value = "/recommendation")
+    //Using event-driven messaging
     void deleteRecommendations(@RequestParam(value = "productId")  int productId);
 }

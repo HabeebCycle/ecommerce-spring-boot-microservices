@@ -7,13 +7,19 @@ import com.habeebcycle.microservices.services.reviewservice.mapper.ReviewMapper;
 import com.habeebcycle.microservices.services.reviewservice.repository.ReviewRepository;
 import com.habeebcycle.microservices.util.exceptions.InvalidInputException;
 import com.habeebcycle.microservices.util.http.ServiceUtil;
+import org.reactivestreams.Publisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Scheduler;
 
 import java.util.List;
+import java.util.function.Supplier;
+
+import static java.util.logging.Level.FINE;
 
 @RestController
 public class ReviewServiceImpl implements ReviewService {
@@ -26,11 +32,14 @@ public class ReviewServiceImpl implements ReviewService {
 
     private final ServiceUtil serviceUtil;
 
+    private final Scheduler scheduler;
+
     @Autowired
-    public ReviewServiceImpl(ReviewRepository repository, ReviewMapper mapper, ServiceUtil serviceUtil) {
+    public ReviewServiceImpl(Scheduler scheduler, ReviewRepository repository, ReviewMapper mapper, ServiceUtil serviceUtil) {
         this.repository = repository;
         this.mapper = mapper;
         this.serviceUtil = serviceUtil;
+        this.scheduler = scheduler;
     }
 
     @Override
@@ -48,9 +57,22 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public List<Review> getReviews(int productId) {
+    public Flux<Review> getReviews(int productId) {
 
         if (productId < 1) throw new InvalidInputException("Invalid productId: " + productId);
+
+        LOG.info("Will get reviews for product with id={}", productId);
+
+        return asyncFlux(() -> Flux.fromIterable(getByProductId(productId))).log(null, FINE);
+    }
+
+    @Override
+    public void deleteReviews(int productId) {
+        LOG.debug("deleteReviews: tries to delete reviews for the product with productId: {}", productId);
+        repository.deleteAll(repository.findByProductId(productId));
+    }
+
+    protected List<Review> getByProductId(int productId) {
 
         List<ReviewEntity> entityList = repository.findByProductId(productId);
         List<Review> list = mapper.entityListToApiList(entityList);
@@ -61,9 +83,7 @@ public class ReviewServiceImpl implements ReviewService {
         return list;
     }
 
-    @Override
-    public void deleteReviews(int productId) {
-        LOG.debug("deleteReviews: tries to delete reviews for the product with productId: {}", productId);
-        repository.deleteAll(repository.findByProductId(productId));
+    private <T> Flux<T> asyncFlux(Supplier<Publisher<T>> publisherSupplier) {
+        return Flux.defer(publisherSupplier).subscribeOn(scheduler);
     }
 }

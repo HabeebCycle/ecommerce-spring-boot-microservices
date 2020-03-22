@@ -1,6 +1,7 @@
 package com.habeebcycle.microservices.services.recommendationservice;
 
 import com.habeebcycle.microservices.services.recommendationservice.mapper.RecommendationMapper;
+import com.habeebcycle.microservices.services.recommendationservice.repository.RecommendationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

@@ -1,6 +1,7 @@
 package com.habeebcycle.microservices.api.core.product;
 
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 
 public interface ProductService {
     /**
@@ -9,10 +10,11 @@ public interface ProductService {
      * @param productId the id of product to look for
      * @return the product, if found, else null
      */
+    //Using HTTP GET Method protocol
     @GetMapping(
             value    = "/product/{productId}",
             produces = "application/json")
-    Product getProduct(@PathVariable int productId);
+    Mono<Product> getProduct(@PathVariable int productId);
 
     /**
      * Sample usage:
@@ -24,10 +26,7 @@ public interface ProductService {
      * @param body the valid Product to be created
      * @return the product created if valid
      */
-    @PostMapping(
-            value    = "/product",
-            consumes = "application/json",
-            produces = "application/json")
+    //Using Event-driven messaging system
     Product createProduct(@RequestBody Product body);
 
     /**
@@ -37,6 +36,6 @@ public interface ProductService {
      *
      * @param productId the id of the product to be deleted
      */
-    @DeleteMapping(value = "/product/{productId}")
+    //Using event-driven messaging system
     void deleteProduct(@PathVariable int productId);
 }

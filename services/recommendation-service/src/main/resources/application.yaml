@@ -6,18 +6,56 @@ spring.data.mongodb:
   port: 27017
   database: recommendation-db
 
+spring.cloud.stream:
+  defaultBinder: rabbit
+  default.contentType: application/json
+  bindings.input:
+    destination: recommendations
+    group: recommendationsGroup
+    consumer:
+      maxAttempts: 3
+      backOffInitialInterval: 500
+      backOffMaxInterval: 1000
+      backOffMultiplier: 2.0
+
+  rabbit.bindings.input.consumer:
+    autoBindDlq: true
+    republishToDlq: true
+
+  kafka.bindings.input.consumer:
+    enableDlq: true
+
+  kafka.binder:
+    brokers: 127.0.0.1
+    defaultBrokerPort: 9092
+
+spring.rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
+
 logging:
   level:
     root: INFO
     com.habeebcycle: DEBUG
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
 ---
 spring:
   profiles: docker
+
   data:
     mongodb:
       host: mongodb
+
+  rabbitmq:
+    host: rabbitmq
+
+  cloud.stream.kafka.binder.brokers: kafka
 
 server:
   port: 8080

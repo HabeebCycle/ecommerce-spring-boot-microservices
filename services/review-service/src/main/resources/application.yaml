@@ -8,10 +8,42 @@ spring:
     password: pwd
     hikari.initializationFailTimeout: 60000
 
+    maximum-pool-size: 10
+
   # Strongly recommend to set this property to "none" in a production environment!
   jpa:
     hibernate:
       ddl-auto: update
+
+  cloud.stream:
+    defaultBinder: rabbit
+    default.contentType: application/json
+    bindings.input:
+      destination: reviews
+      group: reviewsGroup
+      consumer:
+        maxAttempts: 3
+        backOffInitialInterval: 500
+        backOffMaxInterval: 1000
+        backOffMultiplier: 2.0
+
+  cloud.stream.rabbit.bindings.input.consumer:
+    autoBindDlq: true
+    republishToDlq: true
+
+  cloud.stream.kafka.bindings.input.consumer:
+    enableDlq: true
+
+  cloud.stream.kafka.binder:
+    brokers: 127.0.0.1
+    defaultBrokerPort: 9092
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
 
 logging:
   level:
@@ -21,12 +53,20 @@ logging:
       SQL: DEBUG
       type.descriptor.sql.BasicBinder: TRACE
 
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
 ---
 spring:
   profiles: docker
 
   datasource:
     url: jdbc:mysql://mysql/review-db
+
+  rabbitmq:
+    host: rabbitmq
+
+  cloud.stream.kafka.binder.brokers: kafka
 
 server:
   port: 8080

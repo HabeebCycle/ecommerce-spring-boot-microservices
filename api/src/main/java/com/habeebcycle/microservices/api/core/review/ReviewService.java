@@ -1,8 +1,7 @@
 package com.habeebcycle.microservices.api.core.review;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 public interface ReviewService {
     /**
@@ -11,10 +10,11 @@ public interface ReviewService {
      * @param productId the product id to get its reviews
      * @return the list of reviews for the product
      */
+    //Using HTTP GET Method protocol
     @GetMapping(
             value    = "/review",
             produces = "application/json")
-    List<Review> getReviews(@RequestParam(value = "productId") int productId);
+    Flux<Review> getReviews(@RequestParam(value = "productId") int productId);
 
     /**
      * Sample usage:
@@ -26,10 +26,7 @@ public interface ReviewService {
      * @param body the valid Review to be created
      * @return the Review created
      */
-    @PostMapping(
-            value    = "/review",
-            consumes = "application/json",
-            produces = "application/json")
+    //Using event-driven messaging
     Review createReview(@RequestBody Review body);
 
     /**
@@ -39,7 +36,7 @@ public interface ReviewService {
      *
      * @param productId the product id of whose reviews will be deleted
      */
-    @DeleteMapping(value = "/review")
+    //Using event-driven messaging
     void deleteReviews(@RequestParam(value = "productId")  int productId);
 
 }
