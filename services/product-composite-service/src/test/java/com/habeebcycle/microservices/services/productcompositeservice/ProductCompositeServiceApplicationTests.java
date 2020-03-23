@@ -6,20 +6,18 @@ import com.habeebcycle.microservices.api.composite.product.ReviewSummary;
 import com.habeebcycle.microservices.api.core.product.Product;
 import com.habeebcycle.microservices.api.core.recommendation.Recommendation;
 import com.habeebcycle.microservices.api.core.review.Review;
-import com.habeebcycle.microservices.services.productcompositeservice.components.ProductCompositeIntegration;
+import com.habeebcycle.microservices.services.productcompositeservice.integration.ProductCompositeIntegration;
 import com.habeebcycle.microservices.util.exceptions.InvalidInputException;
 import com.habeebcycle.microservices.util.exceptions.NotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import static java.util.Collections.singletonList;
 import static org.mockito.Mockito.when;
@@ -45,11 +43,11 @@ class ProductCompositeServiceApplicationTests {
     public void setUp() {
 
         when(compositeIntegration.getProduct(PRODUCT_ID_OK)).
-                thenReturn(new Product(PRODUCT_ID_OK, "name", 1, 1.0, "mock-address"));
+                thenReturn(Mono.just(new Product(PRODUCT_ID_OK, "name", 1, 1.0, "mock-address")));
         when(compositeIntegration.getRecommendations(PRODUCT_ID_OK)).
-                thenReturn(singletonList(new Recommendation(PRODUCT_ID_OK, 1, "author", 1, "content", "mock address")));
+                thenReturn(Flux.fromIterable(singletonList(new Recommendation(PRODUCT_ID_OK, 1, "author", 1, "content", "mock address"))));
         when(compositeIntegration.getReviews(PRODUCT_ID_OK)).
-                thenReturn(singletonList(new Review(PRODUCT_ID_OK, 1, "author", "subject", "content", "mock address")));
+                thenReturn(Flux.fromIterable(singletonList(new Review(PRODUCT_ID_OK, 1, "author", "subject", "content", "mock address"))));
 
         when(compositeIntegration.getProduct(PRODUCT_ID_NOT_FOUND)).thenThrow(new NotFoundException("NOT FOUND: " + PRODUCT_ID_NOT_FOUND));
 

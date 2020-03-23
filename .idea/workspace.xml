@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/event/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/message/MessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/message/MessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/message/MessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/exceptions/EventProcessingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-partitions.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessageSources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/events/IsSameEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/events/IsSameEventTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessagingTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/RecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/RecommendationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/review/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/entity/ProductEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/RecommendationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/RecommendationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/repository/RecommendationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/repository/RecommendationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/services/RecommendationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/services/RecommendationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/test/java/com/habeebcycle/microservices/services/recommendationservice/RecommendationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/test/java/com/habeebcycle/microservices/services/recommendationservice/RecommendationServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/test/java/com/habeebcycle/microservices/services/recommendationservice/persistence/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/test/java/com/habeebcycle/microservices/services/recommendationservice/persistence/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/review-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/ReviewServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/ReviewServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/services/ReviewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/services/ReviewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/review-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/review-service/src/test/java/com/habeebcycle/microservices/services/reviewservice/ReviewServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/src/test/java/com/habeebcycle/microservices/services/reviewservice/ReviewServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/components/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,100 +33,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/repository/ProductRepository.java">
+      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="612">
+              <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/pom.xml">
+      <file leaf-file-name="docker-compose-partitions.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker-compose-partitions.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/entity/ProductEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="79" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/message/MessageProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#344#345#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersistenceTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/PersistenceTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceApplicationTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersistenceTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/recommendation-service/src/test/java/com/habeebcycle/microservices/services/recommendationservice/persistence/PersistenceTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+            <state relative-caret-position="2176">
+              <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="application.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/resources/application.yaml">
+        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="42" lean-forward="true" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+            <state relative-caret-position="1111">
+              <caret line="108" column="25" lean-forward="true" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -172,25 +85,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/services/recommendation-service/src/main/java/com/habeebcycle/microservices/services/recommendationservice/entity/RecommendationEntity.java" />
-        <option value="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/entity/ReviewEntity.java" />
-        <option value="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/mapper/ReviewMapper.java" />
-        <option value="$PROJECT_DIR$/services/recommendation-service/src/test/java/com/habeebcycle/microservices/services/recommendationservice/mapper/RecommendationMapperTest.java" />
-        <option value="$PROJECT_DIR$/services/review-service/src/test/java/com/habeebcycle/microservices/services/reviewservice/mapper/ReviewMapperTests.java" />
-        <option value="$PROJECT_DIR$/services/review-service/src/main/java/com/habeebcycle/microservices/services/reviewservice/repository/ReviewRepository.java" />
-        <option value="$PROJECT_DIR$/services/review-service/src/test/java/com/habeebcycle/microservices/services/reviewservice/persistence/PersistenceTests.java" />
-        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml" />
-        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductAggregate.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/RecommendationSummary.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ReviewSummary.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ServiceAddresses.java" />
-        <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/api/pom.xml" />
         <option value="$PROJECT_DIR$/util/pom.xml" />
-        <option value="$PROJECT_DIR$/services/product-composite-service/pom.xml" />
-        <option value="$PROJECT_DIR$/docker-compose.yaml" />
         <option value="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/components/ProductCompositeIntegration.java" />
         <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/personal/Tests.java" />
         <option value="$PROJECT_DIR$/util/src/test/java/com/habeebcycle/microservices/util/reactor/ReactorTests.java" />
@@ -223,6 +124,18 @@
         <option value="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/PersistenceTests.java" />
         <option value="$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/pom.xml" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplication.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessageSource.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/events/IsSameEvent.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/events/IsSameEventTests.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessagingTests.java" />
+        <option value="$PROJECT_DIR$/docker-compose.yaml" />
+        <option value="$PROJECT_DIR$/docker-compose-partitions.yaml" />
       </list>
     </option>
   </component>
@@ -258,7 +171,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-66" />
     <option name="y" value="112" />
     <option name="width" value="1400" />
@@ -291,128 +204,20 @@
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
+              <item name="product-composite-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
+              <item name="product-composite-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendationservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendationservice" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="review-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="review-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="review-service" type="462c0819:PsiDirectoryNode" />
+              <item name="product-composite-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -420,7 +225,7 @@
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="review-service" type="462c0819:PsiDirectoryNode" />
+              <item name="product-composite-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -475,22 +280,45 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProductServiceApplicationTests">
+  <component name="RunManager" selected="JUnit.ProductCompositeServiceApplicationTests">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="MapperTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="product-service" />
+    <configuration name="IsSameEventTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="product-composite-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.habeebcycle.microservices.services.productservice.*" />
+          <option name="PATTERN" value="com.habeebcycle.microservices.services.productcompositeservice.events.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.productservice" />
-      <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.productservice.MapperTests" />
+      <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.productcompositeservice.events" />
+      <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.productcompositeservice.events.IsSameEventTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="MessagingTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="product-composite-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.habeebcycle.microservices.services.productcompositeservice.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.productcompositeservice.message" />
+      <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.productcompositeservice.message.MessagingTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -525,18 +353,18 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="recommendation-service" />
+    <configuration name="ProductCompositeServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="product-composite-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.habeebcycle.microservices.services.recommendationservice.persistence.*" />
+          <option name="PATTERN" value="com.habeebcycle.microservices.services.productcompositeservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.recommendationservice.persistence" />
-      <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.recommendationservice.persistence.PersistenceTests" />
+      <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.productcompositeservice" />
+      <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.productcompositeservice.ProductCompositeServiceApplicationTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -560,29 +388,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.productservice" />
       <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.productservice.ProductServiceApplicationTests" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="RecommendationServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="recommendation-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.habeebcycle.microservices.services.recommendationservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.habeebcycle.microservices.services.recommendationservice" />
-      <option name="MAIN_CLASS_NAME" value="com.habeebcycle.microservices.services.recommendationservice.RecommendationServiceApplicationTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -663,19 +468,19 @@
       <item itemvalue="Spring Boot.RecommendationServiceApplication" />
       <item itemvalue="Spring Boot.ReviewServiceApplication" />
       <item itemvalue="Spring Boot.ProductCompositeServiceApplication" />
-      <item itemvalue="JUnit.MapperTests" />
-      <item itemvalue="JUnit.PersistenceTests" />
-      <item itemvalue="JUnit.RecommendationServiceApplicationTests" />
       <item itemvalue="JUnit.PersistenceTests (2)" />
       <item itemvalue="JUnit.ProductServiceApplicationTests" />
+      <item itemvalue="JUnit.IsSameEventTests" />
+      <item itemvalue="JUnit.MessagingTests" />
+      <item itemvalue="JUnit.ProductCompositeServiceApplicationTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductCompositeServiceApplicationTests" />
+        <item itemvalue="JUnit.MessagingTests" />
+        <item itemvalue="JUnit.IsSameEventTests" />
         <item itemvalue="JUnit.ProductServiceApplicationTests" />
         <item itemvalue="JUnit.PersistenceTests (2)" />
-        <item itemvalue="JUnit.MapperTests" />
-        <item itemvalue="JUnit.RecommendationServiceApplicationTests" />
-        <item itemvalue="JUnit.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -694,29 +499,11 @@
       <workItem from="1584344061553" duration="50204000" />
       <workItem from="1584594782096" duration="6191000" />
       <workItem from="1584679911826" duration="1309000" />
-      <workItem from="1584853193373" duration="20679000" />
+      <workItem from="1584853193373" duration="34963000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PersistenceTests - 2020.03.22 at 21h 26m 54s.xml">
-      <configuration name="PersistenceTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersistenceTests - 2020.03.22 at 21h 29m 19s.xml">
-      <configuration name="PersistenceTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersistenceTests - 2020.03.22 at 21h 36m 55s.xml">
-      <configuration name="PersistenceTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecommendationMapperTests - 2020.03.22 at 21h 37m 15s.xml">
-      <configuration name="RecommendationMapperTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ReviewMapperTests - 2020.03.22 at 21h 40m 15s.xml">
-      <configuration name="ReviewMapperTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersistenceTests_(1) - 2020.03.22 at 21h 40m 31s.xml">
-      <configuration name="PersistenceTests (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ReviewServiceApplicationTests - 2020.03.22 at 21h 41m 01s.xml">
       <configuration name="ReviewServiceApplicationTests" configurationId="JUnit" />
     </history-entry>
@@ -729,9 +516,27 @@
     <history-entry file="RecommendationServiceApplicationTests - 2020.03.22 at 21h 52m 29s.xml">
       <configuration name="RecommendationServiceApplicationTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MapperTests - 2020.03.22 at 22h 54m 44s.xml">
+      <configuration name="MapperTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PersistenceTests_(2) - 2020.03.22 at 22h 55m 04s.xml">
+      <configuration name="PersistenceTests (2)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductServiceApplicationTests - 2020.03.22 at 22h 55m 33s.xml">
+      <configuration name="ProductServiceApplicationTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IsSameEventTests - 2020.03.23 at 09h 09m 49s.xml">
+      <configuration name="IsSameEventTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MessagingTests - 2020.03.23 at 09h 11m 23s.xml">
+      <configuration name="MessagingTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductCompositeServiceApplicationTests - 2020.03.23 at 09h 12m 30s.xml">
+      <configuration name="ProductCompositeServiceApplicationTests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113340000" />
+    <option name="totallyTimeSpent" value="127624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -785,109 +590,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/exceptions/EventProcessingException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/src/test/java/com/habeebcycle/microservices/util/reactor/ReactorTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/http/GlobalControllerExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/http/HttpErrorInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/review/Review.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/Recommendation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-          <folding>
-            <element signature="e#1299#1300#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/recommendation/RecommendationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ServiceAddresses.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1086,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/MapperTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/review-service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1111,13 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1199,17 +887,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/PersistenceTests.java">
+    <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/MapperTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/ProductServiceApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="-629">
+          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-service/src/test/java/com/habeebcycle/microservices/services/productservice/PersistenceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-716">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="86" column="26" lean-forward="true" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/events/IsSameEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/events/IsSameEventTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="76" lean-forward="true" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6377#6378#0" expanded="true" />
+            <element signature="e#6428#6429#0" expanded="true" />
+            <element signature="e#6481#6482#0" expanded="true" />
+            <element signature="e#6539#6540#0" expanded="true" />
+            <element signature="e#6584#6585#0" expanded="true" />
+            <element signature="e#6634#6635#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessageSources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessagingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="112" column="30" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="65" column="28" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="108" column="25" lean-forward="true" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose-partitions.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
         </state>
       </provider>
     </entry>

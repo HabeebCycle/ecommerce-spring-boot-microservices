@@ -60,15 +60,46 @@ app:
     host: localhost
     port: 7003
 
+spring.cloud.stream:
+  defaultBinder: rabbit
+  default.contentType: application/json
+  bindings:
+    output-products:
+      destination: products
+      producer:
+        required-groups: auditGroup
+    output-recommendations:
+      destination: recommendations
+      producer:
+        required-groups: auditGroup
+    output-reviews:
+      destination: reviews
+      producer:
+        required-groups: auditGroup
+
+  kafka.binder:
+    brokers: 127.0.0.1
+    defaultBrokerPort: 9092
+
+spring.rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
+
 logging:
   level:
     root: INFO
     com.habeebcycle: DEBUG
 
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
 
 ---
 spring:
   profiles: docker
+  rabbitmq.host: rabbitmq
+  cloud.stream.kafka.binder.brokers: kafka
 
 server:
   port: 8080
