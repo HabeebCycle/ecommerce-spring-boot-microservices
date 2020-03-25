@@ -101,6 +101,11 @@ services:
     depends_on:
       - kafka
 
+  service-discovery-server:
+    image: habeebcycle/service-discovery-server:v1
+    ports:
+      - "8761:8761"
+
   # $ mongo
   mongodb:
     image: mongo:3.6.9
