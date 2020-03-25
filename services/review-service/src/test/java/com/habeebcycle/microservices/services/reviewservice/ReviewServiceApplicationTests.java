@@ -25,7 +25,9 @@ import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 @SpringBootTest(webEnvironment=RANDOM_PORT,
-        properties = {"logging.level.com.habeebcycle=DEBUG","spring.datasource.url=jdbc:h2:mem:review-db"})
+        properties = {"logging.level.com.habeebcycle=DEBUG",
+                "eureka.client.enabled=false",
+                "spring.datasource.url=jdbc:h2:mem:review-db"})
 class ReviewServiceApplicationTests {
 
     @Autowired

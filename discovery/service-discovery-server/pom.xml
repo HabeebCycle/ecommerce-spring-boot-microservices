@@ -8,65 +8,21 @@
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.habeebcycle.microservices.services</groupId>
-    <artifactId>review-service</artifactId>
+    <groupId>com.habeebcycle.microservices.discovery</groupId>
+    <artifactId>service-discovery-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>review-service</name>
-    <description>Review Service that is responsible for the reviews of our product</description>
+    <name>service-discovery-server</name>
+    <description>Service Descovery Server using spring cloud Eureka server</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-        <module.version>0.0.1-SNAPSHOT</module.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-kafka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>1.3.1.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-            <version>1.3.1.Final</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
         <dependency>
@@ -79,29 +35,6 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-test-support</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.habeebcycle.microservices</groupId>
-            <artifactId>api</artifactId>
-            <version>${module.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.habeebcycle.microservices</groupId>
-            <artifactId>util</artifactId>
-            <version>${module.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -129,7 +62,7 @@
                 <version>2.1.0</version>
                 <configuration>
                     <to>
-                        <image>docker.io/habeebcycle/review-service:v1</image>
+                        <image>docker.io/habeebcycle/service-discovery-server:v1</image>
                         <!--
                         <auth>
                             <username>${HUB_USERNAME}</username>

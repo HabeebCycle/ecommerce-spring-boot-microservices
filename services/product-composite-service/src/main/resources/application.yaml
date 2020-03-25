@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: product-composite-service
+
 api:
   common:
     version: 1.0.0
@@ -49,16 +53,28 @@ api:
 server:
   port: 7000
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+ribbon.ServerListRefreshInterval: 5000
+
+ribbon.NFLoadBalancerPingInterval: 5
+
+
 app:
   product-service:
-    host: localhost
-    port: 7001
+    name: product-service
   recommendation-service:
-    host: localhost
-    port: 7002
+    name: recommendation-service
   review-service:
-    host: localhost
-    port: 7003
+    name: review-service
 
 spring.cloud.stream:
   defaultBinder: rabbit
@@ -104,13 +120,4 @@ spring:
 server:
   port: 8080
 
-app:
-  product-service:
-    host: product-service
-    port: 8080
-  recommendation-service:
-    host: recommendation-service
-    port: 8080
-  review-service:
-    host: review-service
-    port: 8080
+eureka.client.serviceUrl.defaultZone: http://eureka:8761/eureka/

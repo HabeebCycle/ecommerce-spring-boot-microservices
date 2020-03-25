@@ -37,7 +37,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
     private static final Logger LOG = LoggerFactory.getLogger(ProductCompositeIntegration.class);
 
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
     private final ObjectMapper mapper;
 
     private final String productServiceUrl;
@@ -46,28 +46,25 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
     private MessageSources messageSources;
 
+    private WebClient webClient;
+
     @Autowired
     public ProductCompositeIntegration(
-            WebClient.Builder webClient,
+            WebClient.Builder webClientBuilder,
             ObjectMapper mapper,
             MessageSources messageSources,
 
-            @Value("${app.product-service.host}") String productServiceHost,
-            @Value("${app.product-service.port}") int    productServicePort,
-
-            @Value("${app.recommendation-service.host}") String recommendationServiceHost,
-            @Value("${app.recommendation-service.port}") int    recommendationServicePort,
-
-            @Value("${app.review-service.host}") String reviewServiceHost,
-            @Value("${app.review-service.port}") int    reviewServicePort
+            @Value("${app.product-service.name}") String productServiceHost,
+            @Value("${app.recommendation-service.name}") String recommendationServiceHost,
+            @Value("${app.review-service.name}") String reviewServiceHost
     ){
-        this.webClient = webClient.build();
+        this.webClientBuilder = webClientBuilder;
         this.mapper = mapper;
         this.messageSources = messageSources;
 
-        productServiceUrl        = "http://" + productServiceHost + ":" + productServicePort;
-        recommendationServiceUrl = "http://" + recommendationServiceHost + ":" + recommendationServicePort;
-        reviewServiceUrl         = "http://" + reviewServiceHost + ":" + reviewServicePort;
+        productServiceUrl        = "http://" + productServiceHost;
+        recommendationServiceUrl = "http://" + recommendationServiceHost;
+        reviewServiceUrl         = "http://" + reviewServiceHost;
     }
 
     @Override
@@ -82,7 +79,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
         String url = productServiceUrl + "/product/" + productId;
         LOG.debug("Will call the getProduct API on URL: {}", url);
 
-        return webClient.get().uri(url).retrieve()
+        return getWebClient().get().uri(url).retrieve()
                 .bodyToMono(Product.class).log()
                 .onErrorMap(WebClientResponseException.class, this::handleException);
     }
@@ -108,7 +105,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
         LOG.debug("Will call the getRecommendations API on URL: {}", url);
 
         // Return an empty result if something goes wrong to make it possible for the composite service to return partial responses
-        return webClient.get().uri(url).retrieve()
+        return getWebClient().get().uri(url).retrieve()
                 .bodyToFlux(Recommendation.class).log().onErrorResume(error -> empty());
     }
 
@@ -134,7 +131,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
         LOG.debug("Will call the getReviews API on URL: {}", url);
 
         // Return an empty result if something goes wrong to make it possible for the composite service to return partial responses
-        return webClient.get().uri(url).retrieve()
+        return getWebClient().get().uri(url).retrieve()
                 .bodyToFlux(Review.class).log().onErrorResume(error -> empty());
 
     }
@@ -160,10 +157,17 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     private Mono<Health> getHealth(String url) {
         url += "/actuator/health";
         LOG.debug("Will call the Health API on URL: {}", url);
-        return webClient.get().uri(url).retrieve().bodyToMono(String.class)
+        return getWebClient().get().uri(url).retrieve().bodyToMono(String.class)
                 .map(s -> new Health.Builder().up().build())
                 .onErrorResume(ex -> Mono.just(new Health.Builder().down(ex).build()))
                 .log();
+    }
+
+    private WebClient getWebClient() {
+        if (webClient == null) {
+            webClient = webClientBuilder.build();
+        }
+        return webClient;
     }
 
     private Throwable handleException(Throwable ex) {

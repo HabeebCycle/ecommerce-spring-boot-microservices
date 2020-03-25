@@ -17,6 +17,7 @@
         <module>services/product-service</module>
         <module>services/recommendation-service</module>
         <module>services/review-service</module>
+        <module>discovery/service-discovery-server</module>
         <module>api</module>
         <module>util</module>
     </modules>
