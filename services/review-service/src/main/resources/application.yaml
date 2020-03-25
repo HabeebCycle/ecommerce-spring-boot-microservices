@@ -2,26 +2,11 @@ spring:
   application:
     name: review-service
 
-server:
-  port: 7003
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    initialInstanceInfoReplicationIntervalSeconds: 5
-    registryFetchIntervalSeconds: 5
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
-
-spring:
   datasource:
     url: jdbc:mysql://localhost/review-db
     username: user
     password: pwd
     hikari.initializationFailTimeout: 60000
-
     maximum-pool-size: 10
 
   # Strongly recommend to set this property to "none" in a production environment!
@@ -41,16 +26,16 @@ spring:
         backOffMaxInterval: 1000
         backOffMultiplier: 2.0
 
-  cloud.stream.rabbit.bindings.input.consumer:
-    autoBindDlq: true
-    republishToDlq: true
+    rabbit.bindings.input.consumer:
+      autoBindDlq: true
+      republishToDlq: true
 
-  cloud.stream.kafka.bindings.input.consumer:
-    enableDlq: true
+    kafka.bindings.input.consumer:
+      enableDlq: true
 
-  cloud.stream.kafka.binder:
-    brokers: 127.0.0.1
-    defaultBrokerPort: 9092
+    kafka.binder:
+      brokers: 127.0.0.1
+      defaultBrokerPort: 9092
 
   rabbitmq:
     host: 127.0.0.1
@@ -58,6 +43,19 @@ spring:
     username: guest
     password: guest
 
+
+server:
+  port: 7003
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
 
 logging:
   level:
