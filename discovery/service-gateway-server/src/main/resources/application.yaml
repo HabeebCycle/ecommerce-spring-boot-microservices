@@ -7,6 +7,20 @@ spring:
     gateway:
       routes:
 
+        - id: swagger-ui
+          uri: ${app.product-composite-service}:8080
+          predicates:
+          - Path=/swagger-ui
+          filters:
+          - SetPath=/swagger-ui.html
+
+        - id: swagger-ui-webjars
+          uri: ${app.product-composite-service}:8080
+          predicates:
+          - Path=/webjars/springfox-swagger-ui/{segment}
+          filters:
+          - SetPath=/webjars/springfox-swagger-ui/{segment}
+
         - id: product-composite-service
           uri: lb://product-composite-service
           predicates:
