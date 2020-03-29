@@ -34,8 +34,6 @@ services:
 
   product-composite-service:
     image: habeebcycle/product-composite-service:v1
-    ports:
-      - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -44,8 +42,13 @@ services:
 
   service-discovery-server:
     image: habeebcycle/service-discovery-server:v1
+
+  service-gateway-server:
+    image: habeebcycle/service-gateway-server:v1
     ports:
-      - "8761:8761"
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
   # $ mongo
   mongodb:

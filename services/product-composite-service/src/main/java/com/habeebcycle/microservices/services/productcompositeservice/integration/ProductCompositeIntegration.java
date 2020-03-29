@@ -54,17 +54,17 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
             ObjectMapper mapper,
             MessageSources messageSources,
 
-            @Value("${app.product-service.name}") String productServiceHost,
-            @Value("${app.recommendation-service.name}") String recommendationServiceHost,
-            @Value("${app.review-service.name}") String reviewServiceHost
+            @Value("${app.product-service}") String productServiceHost,
+            @Value("${app.recommendation-service}") String recommendationServiceHost,
+            @Value("${app.review-service}") String reviewServiceHost
     ){
         this.webClientBuilder = webClientBuilder;
         this.mapper = mapper;
         this.messageSources = messageSources;
 
-        productServiceUrl        = "http://" + productServiceHost;
-        recommendationServiceUrl = "http://" + recommendationServiceHost;
-        reviewServiceUrl         = "http://" + reviewServiceHost;
+        productServiceUrl        = productServiceHost;
+        recommendationServiceUrl = recommendationServiceHost;
+        reviewServiceUrl         = reviewServiceHost;
     }
 
     @Override
@@ -140,27 +140,6 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     public void deleteReviews(int productId) {
         messageSources.outputReviews()
                 .send(MessageBuilder.withPayload(new Event(DELETE, productId, null)).build());
-    }
-
-    public Mono<Health> getProductHealth() {
-        return getHealth(productServiceUrl);
-    }
-
-    public Mono<Health> getRecommendationHealth() {
-        return getHealth(recommendationServiceUrl);
-    }
-
-    public Mono<Health> getReviewHealth() {
-        return getHealth(reviewServiceUrl);
-    }
-
-    private Mono<Health> getHealth(String url) {
-        url += "/actuator/health";
-        LOG.debug("Will call the Health API on URL: {}", url);
-        return getWebClient().get().uri(url).retrieve().bodyToMono(String.class)
-                .map(s -> new Health.Builder().up().build())
-                .onErrorResume(ex -> Mono.just(new Health.Builder().down(ex).build()))
-                .log();
     }
 
     private WebClient getWebClient() {

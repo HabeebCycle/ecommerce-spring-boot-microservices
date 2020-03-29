@@ -53,10 +53,16 @@ api:
 server:
   port: 7000
 
+app:
+  eureka-server: localhost
+  product-service: http://product-service
+  recommendation-service: http://recommendation-service
+  review-service: http://review-service
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://${app.eureka-server}:8761/eureka/
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
@@ -67,14 +73,6 @@ ribbon.ServerListRefreshInterval: 5000
 
 ribbon.NFLoadBalancerPingInterval: 5
 
-
-app:
-  product-service:
-    name: product-service
-  recommendation-service:
-    name: recommendation-service
-  review-service:
-    name: review-service
 
 spring.cloud.stream:
   defaultBinder: rabbit
@@ -120,4 +118,5 @@ spring:
 server:
   port: 8080
 
-eureka.client.serviceUrl.defaultZone: http://service-discovery-server:8761/eureka/
+app:
+  eureka-server: service-discovery-server
