@@ -1,0 +1,97 @@
+
+spring:
+  application:
+    name: service-gateway-server
+
+  cloud:
+    gateway:
+      routes:
+
+        - id: product-composite-service
+          uri: lb://product-composite-service
+          predicates:
+          - Path=/product-composite/**
+
+        - id: service-discovery-server-api
+          uri: http://${app.eureka-server}:8761
+          predicates:
+          - Path=/eureka/api/{segment}
+          filters:
+          - SetPath=/eureka/{segment}
+
+        - id: service-discovery-server-web-start
+          uri: http://${app.eureka-server}:8761
+          predicates:
+          - Path=/eureka/web
+          filters:
+          - SetPath=/
+
+        - id: service-discovery-server-web-other
+          uri: http://${app.eureka-server}:8761
+          predicates:
+          - Path=/eureka/**
+
+        - id: host_route_200
+          uri: http://httpstat.us
+          predicates:
+          - Host=i.feel.lucky:8080
+          - Path=/headerrouting/**
+          filters:
+          - SetPath=/200
+
+        - id: host_route_418
+          uri: http://httpstat.us
+          predicates:
+          - Host=im.a.teapot:8080
+          - Path=/headerrouting/**
+          filters:
+          - SetPath=/418
+
+        - id: host_route_501
+          uri: http://httpstat.us
+          predicates:
+          - Path=/headerrouting/**
+          filters:
+          - SetPath=/501
+
+server:
+  port: 8080
+
+app:
+  eureka-server: localhost
+  product-composite-service: http://product-composite-service
+  product-service: http://product-service
+  recommendation-service: http://recommendation-service
+  review-service: http://review-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${app.eureka-server}:8761/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+ribbon.ServerListRefreshInterval: 5000
+
+ribbon.NFLoadBalancerPingInterval: 5
+
+
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
+    org.springframework.cloud.gateway: TRACE
+
+
+---
+spring:
+  profiles: docker
+
+app:
+  eureka-server: service-discovery-server

@@ -84,9 +84,9 @@ public class ProductCompositeServiceApplication {
 
         ReactiveHealthIndicatorRegistry  registry = new DefaultReactiveHealthIndicatorRegistry(new LinkedHashMap<>());
 
-        registry.register("product", () -> integration.getProductHealth());
-        registry.register("recommendation", () -> integration.getRecommendationHealth());
-        registry.register("review", () -> integration.getReviewHealth());
+        registry.register("product-service", () -> integration.getProductHealth());
+        registry.register("recommendation-service", () -> integration.getRecommendationHealth());
+        registry.register("review-service", () -> integration.getReviewHealth());
 
         return new CompositeReactiveHealthIndicator(healthAggregator, registry);
     }

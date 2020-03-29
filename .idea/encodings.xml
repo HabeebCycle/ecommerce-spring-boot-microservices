@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discovery/service-discovery-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/discovery/service-gateway-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/services/product-composite-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/services/product-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/services/recommendation-service" charset="UTF-8" />
