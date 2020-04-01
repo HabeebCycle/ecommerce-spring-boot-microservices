@@ -5,10 +5,17 @@ spring:
 server:
   port: 7002
 
+app:
+  service-discovery-server:
+    host: localhost
+    port: 8761
+    username: u
+    password: p
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://${app.service-discovery-server.username}:${app.service-discovery-server.password}@${app.service-discovery-server.host}:${app.service-discovery-server.port}/eureka/
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
@@ -71,7 +78,9 @@ spring:
 
   cloud.stream.kafka.binder.brokers: kafka
 
-eureka.client.serviceUrl.defaultZone: http://service-discovery-server:8761/eureka/
+app:
+  service-discovery-server:
+    host: service-discovery-server
 
 server:
   port: 8080

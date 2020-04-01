@@ -161,4 +161,6 @@ app:
   service-discovery-server:
     host: service-discovery-server
   service-authorization-server:
-    host: service-authorization-server:
+    host: service-authorization-server
+  product-composite-service:
+    port: 8080
