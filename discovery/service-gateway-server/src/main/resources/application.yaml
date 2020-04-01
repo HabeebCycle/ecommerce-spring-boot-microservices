@@ -3,45 +3,77 @@ spring:
   application:
     name: service-gateway-server
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://${app.service-authorization-server.host}:${app.service-authorization-server.port}/.well-known/jwks.json
+
   cloud:
     gateway:
       routes:
 
         - id: swagger-ui
-          uri: ${app.product-composite-service}:8080
+          uri: ${app.product-composite-service.host}:${app.product-composite-service.port}
           predicates:
           - Path=/swagger-ui
           filters:
           - SetPath=/swagger-ui.html
 
         - id: swagger-ui-webjars
-          uri: ${app.product-composite-service}:8080
+          uri: ${app.product-composite-service.host}:${app.product-composite-service.port}
           predicates:
-          - Path=/webjars/springfox-swagger-ui/{segment}
+          - Path=/webjars/{segment}
           filters:
-          - SetPath=/webjars/springfox-swagger-ui/{segment}
+          - SetPath=/webjars/{segment}
+
+        - id: swagger-ui-configuration
+          uri: ${app.product-composite-service.host}:${app.product-composite-service.port}
+          predicates:
+          - Path=/configuration/{segment}
+          filters:
+          - SetPath=/configuration/{segment}
+
+        - id: swagger-ui-resources
+          uri: ${app.product-composite-service.host}:${app.product-composite-service.port}
+          predicates:
+          - Path=/swagger-resources/{segment}
+          filters:
+          - SetPath=/swagger-resources/{segment}
+
+        - id: swagger-ui-api-docs
+          uri: ${app.product-composite-service.host}:${app.product-composite-service.port}
+          predicates:
+          - Path=/v2/api-docs
+          filters:
+          - SetPath=/v2/api-docs
 
         - id: product-composite-service
           uri: lb://product-composite-service
           predicates:
           - Path=/product-composite/**
 
+        - id: service-authorization-server
+          uri: lb://service-authorization-server
+          predicates:
+          - Path=/oauth/**
+
         - id: service-discovery-server-api
-          uri: http://${app.eureka-server}:8761
+          uri: http://${app.service-discovery-server.host}:${app.service-discovery-server.port}
           predicates:
           - Path=/eureka/api/{segment}
           filters:
           - SetPath=/eureka/{segment}
 
         - id: service-discovery-server-web-start
-          uri: http://${app.eureka-server}:8761
+          uri: http://${app.service-discovery-server.host}:${app.service-discovery-server.port}
           predicates:
           - Path=/eureka/web
           filters:
           - SetPath=/
 
         - id: service-discovery-server-web-other
-          uri: http://${app.eureka-server}:8761
+          uri: http://${app.service-discovery-server.host}:${app.service-discovery-server.port}
           predicates:
           - Path=/eureka/**
 
@@ -69,19 +101,36 @@ spring:
           - SetPath=/501
 
 server:
-  port: 8080
+  port: 8443
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore/gateway.p12
+    key-store-password: password
+    key-alias: secured-gateway
 
 app:
-  eureka-server: localhost
-  product-composite-service: http://product-composite-service
-  product-service: http://product-service
-  recommendation-service: http://recommendation-service
-  review-service: http://review-service
+  service-discovery-server:
+    host: localhost
+    port: 8761
+    username: u
+    password: p
+  service-authorization-server:
+    host: localhost
+    port: 9999
+  product-composite-service:
+    host: http://product-composite-service
+    port: 7000
+  product-service:
+    host: http://product-service
+  recommendation-service:
+    host: http://recommendation-service
+  review-service:
+    host: http://review-service
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${app.eureka-server}:8761/eureka/
+      defaultZone: http://${app.service-discovery-server.username}:${app.service-discovery-server.password}@${app.service-discovery-server.host}:${app.service-discovery-server.port}/eureka/
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
@@ -101,6 +150,7 @@ logging:
     root: INFO
     org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
     org.springframework.cloud.gateway: TRACE
+    org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE
 
 
 ---
@@ -108,4 +158,7 @@ spring:
   profiles: docker
 
 app:
-  eureka-server: service-discovery-server
+  service-discovery-server:
+    host: service-discovery-server
+  service-authorization-server:
+    host: service-authorization-server:

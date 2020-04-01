@@ -54,9 +54,9 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
             ObjectMapper mapper,
             MessageSources messageSources,
 
-            @Value("${app.product-service}") String productServiceHost,
-            @Value("${app.recommendation-service}") String recommendationServiceHost,
-            @Value("${app.review-service}") String reviewServiceHost
+            @Value("${app.product-service.host}") String productServiceHost,
+            @Value("${app.recommendation-service.host}") String recommendationServiceHost,
+            @Value("${app.review-service.host}") String reviewServiceHost
     ){
         this.webClientBuilder = webClientBuilder;
         this.mapper = mapper;

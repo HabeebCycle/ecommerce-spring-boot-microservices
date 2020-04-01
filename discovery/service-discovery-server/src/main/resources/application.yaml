@@ -5,6 +5,12 @@ spring:
 server:
   port: 8761
 
+app:
+  service-discovery-server:
+    host: localhost
+    username: u
+    password: p
+
 eureka:
   instance:
     hostname: localhost

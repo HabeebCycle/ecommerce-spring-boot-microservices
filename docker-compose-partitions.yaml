@@ -100,9 +100,14 @@ services:
   service-gateway-server:
     image: habeebcycle/service-gateway-server:v1
     ports:
-    - "8080:8080"
+      - "8443:8443"
     environment:
-    - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=docker
+
+  service-authorization-server:
+    image: habeebcycle/service-authorization-server:v1
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
   # $ mongo
   mongodb:

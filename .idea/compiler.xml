@@ -11,6 +11,7 @@
         <module name="product-service" />
         <module name="recommendation-service" />
         <module name="review-service" />
+        <module name="service-authorization-server" />
         <module name="service-discovery-server" />
         <module name="service-gateway-server" />
         <module name="util" />

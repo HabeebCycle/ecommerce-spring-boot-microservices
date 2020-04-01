@@ -19,6 +19,7 @@
         <module>services/review-service</module>
         <module>discovery/service-discovery-server</module>
         <module>discovery/service-gateway-server</module>
+        <module>discovery/service-authorization-server</module>
         <module>api</module>
         <module>util</module>
     </modules>

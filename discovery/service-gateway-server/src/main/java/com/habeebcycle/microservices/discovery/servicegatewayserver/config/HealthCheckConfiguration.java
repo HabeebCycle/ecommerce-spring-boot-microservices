@@ -27,16 +27,18 @@ public class HealthCheckConfiguration {
     private final String recommendationServiceUrl;
     private final String reviewServiceUrl;
     private final String productCompositeServiceUrl;
+    private final String authorizationServerUrl;
 
     @Autowired
     public HealthCheckConfiguration(
             WebClient.Builder webClientBuilder,
             HealthAggregator healthAggregator,
 
-            @Value("${app.product-composite-service}") String productCompositeServiceHost,
-            @Value("${app.product-service}") String productServiceHost,
-            @Value("${app.recommendation-service}") String recommendationServiceHost,
-            @Value("${app.review-service}") String reviewServiceHost
+            @Value("${app.product-composite-service.host}") String productCompositeServiceHost,
+            @Value("${app.product-service.host}") String productServiceHost,
+            @Value("${app.recommendation-service.host}") String recommendationServiceHost,
+            @Value("${app.review-service.host}") String reviewServiceHost,
+            @Value("${app.service-authorization-server.host}") String authServerHost
     ) {
         this.webClientBuilder = webClientBuilder;
         this.healthAggregator = healthAggregator;
@@ -45,6 +47,7 @@ public class HealthCheckConfiguration {
         productServiceUrl        = productServiceHost;
         recommendationServiceUrl = recommendationServiceHost;
         reviewServiceUrl         = reviewServiceHost;
+        authorizationServerUrl   = authServerHost;
     }
 
     @Bean
@@ -52,10 +55,11 @@ public class HealthCheckConfiguration {
 
         ReactiveHealthIndicatorRegistry registry = new DefaultReactiveHealthIndicatorRegistry(new LinkedHashMap<>());
 
-        registry.register("product-service",           () -> getHealth(productServiceUrl));
-        registry.register("recommendation-service",    () -> getHealth(recommendationServiceUrl));
-        registry.register("review-service",            () -> getHealth(reviewServiceUrl));
-        registry.register("product-composite-service", () -> getHealth(productCompositeServiceUrl));
+        registry.register("service-authorization-server",   () -> getHealth(authorizationServerUrl));
+        registry.register("product-service",                () -> getHealth(productServiceUrl));
+        registry.register("recommendation-service",         () -> getHealth(recommendationServiceUrl));
+        registry.register("review-service",                 () -> getHealth(reviewServiceUrl));
+        registry.register("product-composite-service",      () -> getHealth(productCompositeServiceUrl));
 
         return new CompositeReactiveHealthIndicator(healthAggregator, registry);
     }

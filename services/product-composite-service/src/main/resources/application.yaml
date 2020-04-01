@@ -2,6 +2,12 @@ spring:
   application:
     name: product-composite-service
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://${app.service-authorization-server.host}:${app.service-authorization-server.port}/.well-known/jwks.json
+
 api:
   common:
     version: 1.0.0
@@ -54,15 +60,25 @@ server:
   port: 7000
 
 app:
-  eureka-server: localhost
-  product-service: http://product-service
-  recommendation-service: http://recommendation-service
-  review-service: http://review-service
+  service-discovery-server:
+    host: localhost
+    port: 8761
+    username: u
+    password: p
+  service-authorization-server:
+    host: localhost
+    port: 9999
+  product-service:
+    host: http://product-service
+  recommendation-service:
+    host: http://recommendation-service
+  review-service:
+    host: http://review-service
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${app.eureka-server}:8761/eureka/
+      defaultZone: http://${app.service-discovery-server.username}:${app.service-discovery-server.password}@${app.service-discovery-server.host}:${app.service-discovery-server.port}/eureka/
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
@@ -105,6 +121,7 @@ logging:
   level:
     root: INFO
     com.habeebcycle: DEBUG
+    org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE
 
 management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
@@ -119,4 +136,7 @@ server:
   port: 8080
 
 app:
-  eureka-server: service-discovery-server
+  service-discovery-server:
+    host: service-discovery-server
+  service-authorization-server:
+    host: service-authorization-server

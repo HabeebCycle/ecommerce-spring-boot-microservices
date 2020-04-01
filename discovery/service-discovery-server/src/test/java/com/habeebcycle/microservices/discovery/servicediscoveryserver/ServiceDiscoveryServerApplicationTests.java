@@ -2,6 +2,7 @@ package com.habeebcycle.microservices.discovery.servicediscoveryserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,17 @@ class ServiceDiscoveryServerApplicationTests {
     // TODO; Replace with WebTestClient
     @Autowired
     private TestRestTemplate testRestTemplate;
+
+    @Value("${app.service-discovery-server.username}")
+    private String username;
+
+    @Value("${app.service-discovery-server.password}")
+    private String password;
+
+    @Autowired
+    public void setTestRestTemplate(TestRestTemplate testRestTemplate) {
+        this.testRestTemplate = testRestTemplate.withBasicAuth(username, password);
+    }
 
     @Test
     public void catalogLoads() {

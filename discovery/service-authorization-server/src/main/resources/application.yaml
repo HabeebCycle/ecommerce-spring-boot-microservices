@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: service-authorization-server
+
+server:
+  port: 9999
+
+
+app:
+  service-discovery-server:
+    host: localhost
+    port: 8761
+    username: u
+    password: p
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${app.service-discovery-server.username}:${app.service-discovery-server.password}@${app.service-discovery-server.host}:${app.service-discovery-server.port}/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+ribbon.ServerListRefreshInterval: 5000
+
+ribbon.NFLoadBalancerPingInterval: 5
+
+
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
+#security.oauth2.authorizationserver.jwt.enabled:true
+
+
+---
+spring:
+  profiles: docker
+
+app:
+  service-discovery-server:
+    host: service-discovery-server
