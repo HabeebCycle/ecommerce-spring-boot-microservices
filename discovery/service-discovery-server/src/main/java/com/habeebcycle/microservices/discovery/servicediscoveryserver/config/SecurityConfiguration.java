@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                // Disable CRCF to allow services to register themselves with Eureka
+                // Disable CSRF to allow services to register themselves with Eureka
                 .csrf()
                 .disable()
                 .authorizeRequests()
