@@ -1,0 +1,50 @@
+app:
+  service-discovery-server:
+    host: localhost
+    port: 8761
+    username: u
+    password: '{cipher}bf298f6d5f878b342f9e44bec08cb9ac00b4ce57e98316f030194a225fac89fb'
+  service-authorization-server:
+    host: localhost
+    port: 9999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://${app.service-discovery-server.username}:${app.service-discovery-server.password}@${app.service-discovery-server.host}:${app.service-discovery-server.port}/eureka/"
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+ribbon.ServerListRefreshInterval: 5000
+ribbon.NFLoadBalancerPingInterval:
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: '{cipher}17fcf0ae5b8c5cf87de6875b699be4a1746dd493a99d926c7a26a68c422117ef'
+
+  cloud.stream.kafka.binder:
+    brokers: 127.0.0.1
+    defaultBrokerPort: 9092
+
+# WARNING: Exposing all management endpoints over http should only be used during development, must be locked down in production!
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
+---
+
+spring:
+  profiles: docker
+  rabbitmq.host: rabbitmq
+  cloud.stream.kafka.binder.brokers: kafka
+
+app:
+  service-discovery-server:
+    host: service-discovery-server
+  service-authorization-server:
+    host: service-authorization-server

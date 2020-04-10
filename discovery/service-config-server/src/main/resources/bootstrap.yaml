@@ -1,0 +1,3 @@
+# Default encryption key. Will be replaced by properties from .env file
+encrypt:
+  key: my-very-secure-encrypt-key

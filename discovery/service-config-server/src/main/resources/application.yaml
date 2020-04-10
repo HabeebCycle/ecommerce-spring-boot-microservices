@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: service-config-server
+
+  #Default username and password. Will be replaced by properties from .env file
+  security:
+    user:
+      name: user
+      password: root
+
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/HabeebCycleDevelopment/microservices-config-repo.git
+
+server:
+  port: 8888
+
+logging:
+  level:
+    root: INFO
+
+# WARNING: Exposing all management endpoints over http should only be used during development, must be locked down in production!
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
+
+---
+
+spring:
+  profiles: docker

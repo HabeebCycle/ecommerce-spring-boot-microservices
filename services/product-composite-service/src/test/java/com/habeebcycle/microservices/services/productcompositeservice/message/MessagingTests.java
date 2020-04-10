@@ -7,6 +7,8 @@ import com.habeebcycle.microservices.api.core.product.Product;
 import com.habeebcycle.microservices.api.core.recommendation.Recommendation;
 import com.habeebcycle.microservices.api.core.review.Review;
 import com.habeebcycle.microservices.api.event.Event;
+import com.habeebcycle.microservices.services.productcompositeservice.ProductCompositeServiceApplication;
+import com.habeebcycle.microservices.services.productcompositeservice.TestSecurityConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,9 @@ import static org.springframework.cloud.stream.test.matcher.MessageQueueMatcher.
 import static org.springframework.http.HttpStatus.OK;
 import static reactor.core.publisher.Mono.just;
 
-@SpringBootTest(webEnvironment=RANDOM_PORT)
+@SpringBootTest(webEnvironment=RANDOM_PORT,
+        classes = {ProductCompositeServiceApplication.class, TestSecurityConfig.class },
+        properties = {"spring.main.allow-bean-definition-overriding=true","eureka.client.enabled=false", "spring.cloud.config.enabled=false"})
 public class MessagingTests {
 
     @Autowired

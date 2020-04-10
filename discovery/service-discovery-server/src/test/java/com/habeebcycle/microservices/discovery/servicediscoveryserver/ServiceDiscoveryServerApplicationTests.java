@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT, properties = {"spring.cloud.config.enabled=false"})
 class ServiceDiscoveryServerApplicationTests {
 
     @Test
@@ -22,10 +22,10 @@ class ServiceDiscoveryServerApplicationTests {
     @Autowired
     private TestRestTemplate testRestTemplate;
 
-    @Value("${app.service-discovery-server.username}")
+    @Value("${app.service-discovery-server.username:u}")
     private String username;
 
-    @Value("${app.service-discovery-server.password}")
+    @Value("${app.service-discovery-server.password:p}")
     private String password;
 
     @Autowired

@@ -1,13 +1,3 @@
-spring:
-  application:
-    name: product-composite-service
-
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://${app.service-authorization-server.host}:${app.service-authorization-server.port}/.well-known/jwks.json
-
 api:
   common:
     version: 1.0.0
@@ -56,87 +46,10 @@ api:
         This means that a delete request of a non existing product will return <b>200 Ok</b>.
 
 
-server:
-  port: 7000
-
 app:
-  service-discovery-server:
-    host: localhost
-    port: 8761
-    username: u
-    password: p
-  service-authorization-server:
-    host: localhost
-    port: 9999
   product-service:
     host: http://product-service
   recommendation-service:
     host: http://recommendation-service
   review-service:
     host: http://review-service
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${app.service-discovery-server.username}:${app.service-discovery-server.password}@${app.service-discovery-server.host}:${app.service-discovery-server.port}/eureka/
-    initialInstanceInfoReplicationIntervalSeconds: 5
-    registryFetchIntervalSeconds: 5
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
-
-ribbon.ServerListRefreshInterval: 5000
-
-ribbon.NFLoadBalancerPingInterval: 5
-
-
-spring.cloud.stream:
-  defaultBinder: rabbit
-  default.contentType: application/json
-  bindings:
-    output-products:
-      destination: products
-      producer:
-        required-groups: auditGroup
-    output-recommendations:
-      destination: recommendations
-      producer:
-        required-groups: auditGroup
-    output-reviews:
-      destination: reviews
-      producer:
-        required-groups: auditGroup
-
-  kafka.binder:
-    brokers: 127.0.0.1
-    defaultBrokerPort: 9092
-
-spring.rabbitmq:
-  host: 127.0.0.1
-  port: 5672
-  username: guest
-  password: guest
-
-logging:
-  level:
-    root: INFO
-    com.habeebcycle: DEBUG
-    org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE
-
-management.endpoint.health.show-details: "ALWAYS"
-management.endpoints.web.exposure.include: "*"
-
----
-spring:
-  profiles: docker
-  rabbitmq.host: rabbitmq
-  cloud.stream.kafka.binder.brokers: kafka
-
-server:
-  port: 8080
-
-app:
-  service-discovery-server:
-    host: service-discovery-server
-  service-authorization-server:
-    host: service-authorization-server

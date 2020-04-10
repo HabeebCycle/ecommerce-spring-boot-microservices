@@ -1,15 +1,5 @@
-spring:
-  application:
-    name: service-discovery-server
-
 server:
   port: 8761
-
-app:
-  service-discovery-server:
-    host: localhost
-    username: u
-    password: p
 
 eureka:
   instance:
@@ -23,5 +13,3 @@ eureka:
   server:
     waitTimeInMsWhenSyncEmpty: 0
     response-cache-update-interval-ms: 5000
-
-management.endpoints.web.exposure.include: "*"

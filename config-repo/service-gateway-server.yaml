@@ -1,0 +1,93 @@
+server:
+  port: 8443
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore/gateway.p12
+    key-store-password: password
+    key-alias: secured-gateway
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://${app.service-authorization-server.host}:${app.service-authorization-server.port}/.well-known/jwks.json
+
+  cloud:
+    gateway:
+      routes:
+        - id: product-composite-service
+          uri: lb://product-composite-service
+          predicates:
+          - Path=/product-composite/**
+
+        - id: service-authorization-server
+          uri: lb://service-authorization-server
+          predicates:
+          - Path=/oauth/**
+
+        - id: service-discovery-server-api
+          uri: http://${app.service-discovery-server.host}:${app.service-discovery-server.port}
+          predicates:
+          - Path=/eureka/api/{segment}
+          filters:
+          - SetPath=/eureka/{segment}
+
+        - id: service-discovery-server-web-start
+          uri: http://${app.service-discovery-server.host}:${app.service-discovery-server.port}
+          predicates:
+          - Path=/eureka/web
+          filters:
+          - SetPath=/
+
+        - id: service-discovery-server-web-other
+          uri: http://${app.service-discovery-server.host}:${app.service-discovery-server.port}
+          predicates:
+          - Path=/eureka/**
+
+        - id: service-config-server
+          uri: http://${app.service-config-server.host}:${app.service-config-server.port}
+          predicates:
+          - Path=/config/**
+          filters:
+          - RewritePath=/config/(?<segment>.*), /$\{segment}
+
+        - id: host_route_200
+          uri: http://httpstat.us
+          predicates:
+          - Host=i.feel.lucky:8080
+          - Path=/headerrouting/**
+          filters:
+          - SetPath=/200
+
+        - id: host_route_418
+          uri: http://httpstat.us
+          predicates:
+          - Host=im.a.teapot:8080
+          - Path=/headerrouting/**
+          filters:
+          - SetPath=/418
+
+        - id: host_route_501
+          uri: http://httpstat.us
+          predicates:
+          - Path=/headerrouting/**
+          filters:
+          - SetPath=/501
+
+app:
+  product-composite-service:
+    host: http://product-composite-service
+  product-service:
+    host: http://product-service
+  recommendation-service:
+    host: http://recommendation-service
+  review-service:
+    host: http://review-service
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.web.server.adapter.HttpWebHandlerAdapter: TRACE

@@ -51,7 +51,7 @@ public class HealthCheckConfiguration {
     }
 
     @Bean
-    ReactiveHealthIndicator healthcheckMicroservices() {
+    ReactiveHealthIndicator healthCheckMicroservices() {
 
         ReactiveHealthIndicatorRegistry registry = new DefaultReactiveHealthIndicatorRegistry(new LinkedHashMap<>());
 

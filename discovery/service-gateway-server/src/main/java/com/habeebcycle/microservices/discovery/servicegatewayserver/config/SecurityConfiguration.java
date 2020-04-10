@@ -18,13 +18,10 @@ public class SecurityConfiguration {
                 .csrf().disable()
                 .authorizeExchange()
                 .pathMatchers("/headerrouting/**").permitAll()
-                .pathMatchers("/swagger-ui/**").permitAll()
-                .pathMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources",
-                        "/configuration/security", "/swagger-ui.html", "/webjars/**",
-                        "/swagger-resources/configuration/ui","/swagger-ui.html").permitAll()
                 .pathMatchers("/actuator/**").permitAll()
                 .pathMatchers("/eureka/**").permitAll()
                 .pathMatchers("/oauth/**").permitAll()
+                .pathMatchers("/config/**").permitAll()
                 .anyExchange().authenticated()
                 .and()
                 .oauth2ResourceServer()
