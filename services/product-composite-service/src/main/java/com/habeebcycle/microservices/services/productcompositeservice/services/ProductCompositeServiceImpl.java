@@ -5,7 +5,9 @@ import com.habeebcycle.microservices.api.core.product.Product;
 import com.habeebcycle.microservices.api.core.recommendation.Recommendation;
 import com.habeebcycle.microservices.api.core.review.Review;
 import com.habeebcycle.microservices.services.productcompositeservice.integration.ProductCompositeIntegration;
+import com.habeebcycle.microservices.util.exceptions.NotFoundException;
 import com.habeebcycle.microservices.util.http.ServiceUtil;
+import io.github.resilience4j.reactor.retry.RetryExceptionWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,11 +78,15 @@ public class ProductCompositeServiceImpl implements ProductCompositeService {
     }
 
     @Override
-    public Mono<ProductAggregate> getCompositeProduct(int productId) {
+    public Mono<ProductAggregate> getCompositeProduct(int productId, int delay, int faultPercent) {
         return Mono.zip(
                 values -> createProductAggregate((SecurityContext) values[0], (Product) values[1], (List<Recommendation>) values[2], (List<Review>) values[3], serviceUtil.getServiceAddress()),
                 ReactiveSecurityContextHolder.getContext().defaultIfEmpty(nullSC),
-                integration.getProduct(productId),
+                integration.getProduct(productId, delay, faultPercent)
+                        .onErrorMap(RetryExceptionWrapper.class, Throwable::getCause)
+                        .onErrorReturn(getProductFallbackValue(productId)),
+                        //.onErrorMap(RetryExceptionWrapper.class, retryException -> retryException.getCause())
+                        //.onErrorReturn(CircuitBreakerOpenException.class, getProductFallbackValue(productId)),
                 integration.getRecommendations(productId).collectList(),
                 integration.getReviews(productId).collectList())
                 .doOnError(ex -> LOG.warn("getCompositeProduct failed: {}", ex.toString()))
@@ -165,5 +171,18 @@ public class ProductCompositeServiceImpl implements ProductCompositeService {
                 LOG.debug("Authorization info: Subject: {}, scopes: {}, expires {}: issuer: {}, audience: {}", subject, scopes, expires, issuer, audience);
             }
         }
+    }
+
+    private Product getProductFallbackValue(int productId) {
+
+        LOG.warn("Creating a fallback product for productId = {}", productId);
+
+        if (productId == 13) {
+            String errMsg = "Product Id: " + productId + " not found in fallback cache!";
+            LOG.warn(errMsg);
+            throw new NotFoundException(errMsg);
+        }
+
+        return new Product(productId, "Fallback product" + productId, productId, 1.0, serviceUtil.getServiceAddress());
     }
 }

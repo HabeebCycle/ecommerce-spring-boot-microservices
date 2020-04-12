@@ -75,10 +75,32 @@ server:
 app:
   product-service:
     host: http://product-service
+    timeoutSec: 2
   recommendation-service:
     host: http://recommendation-service
   review-service:
     host: http://review-service
+
+resilience4j.retry:
+  backends:
+    product:
+      maxRetryAttempts: 3
+      waitDuration: 1000
+      retryExceptions:
+      - org.springframework.web.reactive.function.client.WebClientResponseException$InternalServerError
+
+resilience4j.circuitbreaker:
+  backends:
+    product:
+      registerHealthIndicator: true
+      ringBufferSizeInClosedState: 5
+      failureRateThreshold: 50
+      waitInterval: 10000
+      ringBufferSizeInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      ignoreExceptions:
+        - com.habeebcycle.microservices.util.exceptions.InvalidInputException
+        - com.habeebcycle.microservices.util.exceptions.NotFoundException
 
 logging:
   level:

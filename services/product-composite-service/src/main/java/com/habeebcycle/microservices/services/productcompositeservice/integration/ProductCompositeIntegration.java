@@ -12,20 +12,24 @@ import com.habeebcycle.microservices.services.productcompositeservice.message.Me
 import com.habeebcycle.microservices.util.exceptions.InvalidInputException;
 import com.habeebcycle.microservices.util.exceptions.NotFoundException;
 import com.habeebcycle.microservices.util.http.HttpErrorInfo;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.actuate.health.Health;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
+import java.net.URI;
+import java.time.Duration;
 
 import static com.habeebcycle.microservices.api.event.Event.Type.CREATE;
 import static com.habeebcycle.microservices.api.event.Event.Type.DELETE;
@@ -43,6 +47,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
     private final String productServiceUrl;
     private final String recommendationServiceUrl;
     private final String reviewServiceUrl;
+    private final int productServiceTimeoutSec;
 
     private MessageSources messageSources;
 
@@ -56,7 +61,8 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
 
             @Value("${app.product-service.host}") String productServiceHost,
             @Value("${app.recommendation-service.host}") String recommendationServiceHost,
-            @Value("${app.review-service.host}") String reviewServiceHost
+            @Value("${app.review-service.host}") String reviewServiceHost,
+            @Value("${app.product-service.timeoutSec}") int productServiceTimeoutSec
     ){
         this.webClientBuilder = webClientBuilder;
         this.mapper = mapper;
@@ -65,6 +71,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
         productServiceUrl        = productServiceHost;
         recommendationServiceUrl = recommendationServiceHost;
         reviewServiceUrl         = reviewServiceHost;
+        this.productServiceTimeoutSec = productServiceTimeoutSec;
     }
 
     @Override
@@ -74,14 +81,18 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
         return body;
     }
 
+    @Retry(name = "product")
+    @CircuitBreaker(name = "product")
     @Override
-    public Mono<Product> getProduct(int productId) {
-        String url = productServiceUrl + "/product/" + productId;
+    public Mono<Product> getProduct(int productId, int delay, int faultPercent) {
+        //String url = productServiceUrl + "/product/" + productId;
+        URI url = UriComponentsBuilder.fromUriString(productServiceUrl + "/product/{productId}?delay={delay}&faultPercent={faultPercent}").build(productId, delay, faultPercent);
         LOG.debug("Will call the getProduct API on URL: {}", url);
 
         return getWebClient().get().uri(url).retrieve()
                 .bodyToMono(Product.class).log()
-                .onErrorMap(WebClientResponseException.class, this::handleException);
+                .onErrorMap(WebClientResponseException.class, this::handleException)
+                .timeout(Duration.ofSeconds(productServiceTimeoutSec));
     }
 
     @Override
