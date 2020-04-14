@@ -8,6 +8,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_0,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       - kafka
       - mongodb
@@ -18,6 +20,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_1,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       - kafka
       - mongodb
@@ -28,6 +32,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_0,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       - kafka
       - mongodb
@@ -38,6 +44,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_1,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       - kafka
       - mongodb
@@ -48,6 +56,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_0,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mysql:
         condition: service_healthy
@@ -60,6 +70,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_1,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mysql:
         condition: service_healthy
@@ -72,6 +84,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       - kafka
 
@@ -81,6 +95,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
 
   service-gateway-server:
     image: habeebcycle/service-gateway-server:v1
@@ -90,6 +106,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
 
   service-authorization-server:
     image: habeebcycle/service-authorization-server:v1
@@ -97,22 +115,28 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
 
   service-config-server:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - ENCRYPT_KEY=${CONFIG_SERVER_ENCRYPT_KEY}
-      - SPRING_SECURITY_USER_NAME=${CONFIG_SERVER_USR}
-      - SPRING_SECURITY_USER_PASSWORD=${CONFIG_SERVER_PWD}
+      - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
+      - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
     volumes:
       - $PWD/config-repo:/config-repo
     image: habeebcycle/service-config-server:v1
+    networks:
+      - my-network
 
   # $ mongo
   mongodb:
     image: mongo:3.6.9
     ports:
       - "27017:27017"
+    networks:
+      - my-network
     command: mongod --smallfiles
 
   # $ mysql -uroot -h127.0.0.1 -p
@@ -125,6 +149,8 @@ services:
       - MYSQL_DATABASE=review-db
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pwd
+    networks:
+      - my-network
     healthcheck:
       test: "/usr/bin/mysql --user=user --password=pwd --execute \"SHOW DATABASES;\""
       interval: 10s
@@ -140,6 +166,8 @@ services:
       - KAFKA_ADVERTISED_HOST_NAME=kafka
       - KAFKA_ADVERTISED_PORT=9092
       - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+    networks:
+      - my-network
     depends_on:
       - zookeeper
 
@@ -150,3 +178,10 @@ services:
       - "2181:2181"
     environment:
       - KAFKA_ADVERTISED_HOST_NAME=zookeeper
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+    name: my-network

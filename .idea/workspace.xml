@@ -3,15 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/product-composite-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/product-composite-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/test/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/test/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/review-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/review-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/service-gateway-server.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/service-gateway-server.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery/service-discovery-server/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-discovery-server/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery/service-gateway-server/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-gateway-server/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/product-service/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/recommendation-service/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/review-service/src/main/resources/bootstrap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/src/main/resources/bootstrap.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,63 +41,21 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/pom.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="bootstrap.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="90" column="26" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductCompositeServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="85" column="85" selection-start-line="85" selection-start-column="85" selection-end-line="85" selection-end-column="85" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductCompositeIntegration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="78" column="30" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-composite-service.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config-repo/product-composite-service.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+            <state relative-caret-position="51">
+              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="application.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/resources/application.yaml">
+        <entry file="file://$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="62" column="22" lean-forward="true" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+            <state relative-caret-position="136">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -100,22 +63,15 @@
       <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="303">
+              <caret line="72" column="14" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductCompositeServiceApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name=".evn" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.evn">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -141,6 +97,7 @@
       <find>weight</find>
       <find>product-composite</find>
       <find>8761</find>
+      <find>SPRING</find>
     </findStrings>
     <replaceStrings>
       <replace>product-composite-service</replace>
@@ -170,7 +127,6 @@
         <option value="$PROJECT_DIR$/discovery/service-gateway-server/src/test/resources/application.yaml" />
         <option value="$PROJECT_DIR$/discovery/service-gateway-server/src/test/java/com/habeebcycle/microservices/discovery/servicegatewayserver/ServiceGatewayServerApplicationTests.java" />
         <option value="$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/config/HealthCheckConfiguration.java" />
-        <option value="$PROJECT_DIR$/config-repo/application.yaml" />
         <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessagingTests.java" />
         <option value="$PROJECT_DIR$/services/product-service/pom.xml" />
         <option value="$PROJECT_DIR$/config-repo/product-service.yaml" />
@@ -180,20 +136,7 @@
         <option value="$PROJECT_DIR$/services/review-service/pom.xml" />
         <option value="$PROJECT_DIR$/services/review-service/src/test/java/com/habeebcycle/microservices/services/reviewservice/ReviewServiceApplicationTests.java" />
         <option value="$PROJECT_DIR$/config-repo/recommendation-service.yaml" />
-        <option value="$PROJECT_DIR$/config-repo/review-service.yaml" />
-        <option value="$PROJECT_DIR$/docker-compose-kafka.yaml" />
-        <option value="$PROJECT_DIR$/docker-compose.yaml" />
-        <option value="$PROJECT_DIR$/docker-compose-partitions.yaml" />
-        <option value="$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml" />
-        <option value="$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml" />
-        <option value="$PROJECT_DIR$/discovery/service-discovery-server/src/main/resources/bootstrap.yaml" />
-        <option value="$PROJECT_DIR$/discovery/service-gateway-server/src/main/resources/bootstrap.yaml" />
-        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/resources/bootstrap.yaml" />
-        <option value="$PROJECT_DIR$/services/product-service/src/main/resources/bootstrap.yaml" />
-        <option value="$PROJECT_DIR$/services/recommendation-service/src/main/resources/bootstrap.yaml" />
-        <option value="$PROJECT_DIR$/services/review-service/src/main/resources/bootstrap.yaml" />
         <option value="$PROJECT_DIR$/docker-compose-external-services.yaml" />
-        <option value="$PROJECT_DIR$/config-repo/service-gateway-server.yaml" />
         <option value="$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/config/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/core/product/ProductService.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java" />
@@ -204,6 +147,20 @@
         <option value="$PROJECT_DIR$/services/product-composite-service/pom.xml" />
         <option value="$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java" />
         <option value="$PROJECT_DIR$/services/product-composite-service/src/test/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/config-repo/application.yaml" />
+        <option value="$PROJECT_DIR$/config-repo/service-gateway-server.yaml" />
+        <option value="$PROJECT_DIR$/docker-compose.yaml" />
+        <option value="$PROJECT_DIR$/config-repo/review-service.yaml" />
+        <option value="$PROJECT_DIR$/docker-compose-partitions.yaml" />
+        <option value="$PROJECT_DIR$/docker-compose-kafka.yaml" />
+        <option value="$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/discovery/service-discovery-server/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/discovery/service-gateway-server/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/services/product-composite-service/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/services/product-service/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/services/recommendation-service/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/services/review-service/src/main/resources/bootstrap.yaml" />
       </list>
     </option>
   </component>
@@ -251,8 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -264,63 +221,37 @@
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="config-repo" type="462c0819:PsiDirectoryNode" />
+              <item name="discovery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="discovery" type="462c0819:PsiDirectoryNode" />
+              <item name="service-config-server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
+              <item name="discovery" type="462c0819:PsiDirectoryNode" />
+              <item name="service-config-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
+              <item name="discovery" type="462c0819:PsiDirectoryNode" />
+              <item name="service-config-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
               <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
+              <item name="discovery" type="462c0819:PsiDirectoryNode" />
+              <item name="service-config-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="microservices" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="product-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="productservice" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -514,10 +445,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="api" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.habeebcycle.microservices.api.ApiApplication" />
-    </configuration>
     <configuration name="ProductCompositeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="product-composite-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.habeebcycle.microservices.services.productcompositeservice.ProductCompositeServiceApplication" />
@@ -550,10 +477,6 @@
       <module name="service-gateway-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.habeebcycle.microservices.discovery.servicegatewayserver.ServiceGatewayServerApplication" />
     </configuration>
-    <configuration name="UtilApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="util" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.habeebcycle.microservices.util.UtilApplication" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -577,8 +500,6 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.UtilApplication" />
-      <item itemvalue="Spring Boot.ApiApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
       <item itemvalue="Spring Boot.RecommendationServiceApplication" />
       <item itemvalue="Spring Boot.ReviewServiceApplication" />
@@ -630,6 +551,8 @@
       <workItem from="1586479731359" duration="9912000" />
       <workItem from="1586496727482" duration="1839000" />
       <workItem from="1586659216270" duration="2002000" />
+      <workItem from="1586752444270" duration="5339000" />
+      <workItem from="1586817522718" duration="3115000" />
     </task>
     <servers />
   </component>
@@ -666,7 +589,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246556000" />
+    <option name="totallyTimeSpent" value="256991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,7 +617,6 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32963374" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32963374" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32963374" />
@@ -704,7 +626,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.2408435" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.20199779" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21695095" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32995737" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -712,6 +634,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
@@ -729,49 +652,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/discovery/service-discovery-server/src/main/java/com/habeebcycle/microservices/discovery/servicediscoveryserver/config/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/resources/application.yaml" />
-    <entry file="file://$PROJECT_DIR$/.evn">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/config/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/TestSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/personal/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/message/MessagingTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -823,73 +703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config-repo/recommendation-service.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/review-service/src/main/resources/application.yaml" />
-    <entry file="file://$PROJECT_DIR$/config-repo/review-service.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose-kafka.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="105" column="58" lean-forward="true" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose-partitions.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="114" column="58" lean-forward="true" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-config-server/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="18" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-service/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="95" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/recommendation-service/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="95" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-discovery-server/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/review-service/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="95" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/discovery/service-config-server/src/main/java/com/habeebcycle/microservices/discovery/serviceconfigserver/ServiceConfigServerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -897,59 +711,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config-repo/product-service.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose-external-services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/config/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-repo/application.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config-repo/service-gateway-server.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -970,20 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="123" selection-start-line="34" selection-start-column="123" selection-end-line="34" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/resources/bootstrap.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/src/main/java/com/habeebcycle/microservices/util/exceptions/InvalidInputException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -998,68 +749,237 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="90" column="26" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="85" column="85" selection-start-line="85" selection-start-column="85" selection-end-line="85" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1071">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config-repo/product-composite-service.yaml">
+    <entry file="file://$PROJECT_DIR$/discovery/service-discovery-server/src/main/java/com/habeebcycle/microservices/discovery/servicediscoveryserver/config/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+        <state relative-caret-position="510">
+          <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java">
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/config/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/config/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="78" column="30" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="30" />
+        <state relative-caret-position="68">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/test/resources/application.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="62" column="22" lean-forward="true" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        <state relative-caret-position="1292">
+          <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/habeebcycle/microservices/api/composite/product/ProductCompositeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-repo/service-gateway-server.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_all.bash">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="143" column="39" selection-start-line="143" selection-start-column="39" selection-end-line="143" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="89" column="72" selection-start-line="89" selection-start-column="72" selection-end-line="89" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/integration/ProductCompositeIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-repo/review-service.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/java/com/habeebcycle/microservices/discovery/serviceauthorizationserver/config/AuthorizationServerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1720">
+          <caret line="149" column="41" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/config/HealthCheckConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-repo/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose-partitions.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose-kafka.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose-external-services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-repo/product-composite-service.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-repo/product-service.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-repo/recommendation-service.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-config-server/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-discovery-server/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/review-service/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/recommendation-service/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-service/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="161" selection-start-line="19" selection-start-column="161" selection-end-line="19" selection-end-column="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.evn">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-config-server/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="303">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="14" />
         </state>
       </provider>
     </entry>

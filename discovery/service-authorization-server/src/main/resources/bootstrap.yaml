@@ -3,6 +3,8 @@ app:
   service-config-server:
     host: localhost
     port: 8888
+    username: ${CONFIG_SERVER_USR:user}
+    password: ${CONFIG_SERVER_PWD:root}
 
 spring:
   application:
@@ -15,8 +17,8 @@ spring:
         multiplier: 1.3
         maxInterval: 10000
         maxAttempts: 20
-      #uri: http://${CONFIG_SERVER_USR}:${CONFIG_SERVER_PWD}@${app.service-config-server.host}:${app.service-config-server.port}
-      uri: http://user:root@${app.service-config-server.host}:${app.service-config-server.port}
+      uri: http://${app.service-config-server.username}:${app.service-config-server.password}@${app.service-config-server.host}:${app.service-config-server.port}
+      #uri: http://user:root@${app.service-config-server.host}:${app.service-config-server.port}
 
 #security.oauth2.authorizationserver.jwt.enabled:true
 

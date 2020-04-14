@@ -5,9 +5,8 @@ spring:
   #Default username and password. Will be replaced by properties from .env file
   security:
     user:
-      name: user
-      password: root
-
+      name: ${CONFIG_SERVER_USR:user}
+      password: ${CONFIG_SERVER_PWD:root}
 
   cloud:
     config:

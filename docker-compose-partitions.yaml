@@ -8,6 +8,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_0
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mongodb:
         condition: service_healthy
@@ -20,6 +22,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_1
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mongodb:
         condition: service_healthy
@@ -32,6 +36,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_0
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mongodb:
         condition: service_healthy
@@ -44,6 +50,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_1
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mongodb:
         condition: service_healthy
@@ -56,6 +64,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_0
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mysql:
         condition: service_healthy
@@ -68,6 +78,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned,streaming_instance_1
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       mysql:
         condition: service_healthy
@@ -80,6 +92,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker,streaming_partitioned
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -90,6 +104,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
 
   service-gateway-server:
     image: habeebcycle/service-gateway-server:v1
@@ -99,6 +115,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
 
   service-authorization-server:
     image: habeebcycle/service-authorization-server:v1
@@ -106,16 +124,20 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
+    networks:
+      - my-network
 
   service-config-server:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - ENCRYPT_KEY=${CONFIG_SERVER_ENCRYPT_KEY}
-      - SPRING_SECURITY_USER_NAME=${CONFIG_SERVER_USR}
-      - SPRING_SECURITY_USER_PASSWORD=${CONFIG_SERVER_PWD}
+      - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
+      - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
     volumes:
       - $PWD/config-repo:/config-repo
     image: habeebcycle/service-config-server:v1
+    networks:
+      - my-network
 
   # $ mongo
   mongodb:
@@ -123,6 +145,8 @@ services:
     ports:
       - "27017:27017"
     command: mongod --smallfiles
+    networks:
+      - my-network
     healthcheck:
       test: "mongo --eval 'db.stats().ok'"
       interval: 10s
@@ -139,6 +163,8 @@ services:
       - MYSQL_DATABASE=review-db
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pwd
+    networks:
+      - my-network
     healthcheck:
       test: "/usr/bin/mysql --user=user --password=pwd --execute \"SHOW DATABASES;\""
       interval: 10s
@@ -151,8 +177,15 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+    networks:
+      - my-network
     healthcheck:
       test: ["CMD", "rabbitmqctl", "status"]
       interval: 10s
       timeout: 5s
       retries: 10
+
+
+networks:
+  my-network:
+    name: my-network

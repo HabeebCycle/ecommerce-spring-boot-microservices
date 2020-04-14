@@ -6,6 +6,9 @@ server:
     key-store-password: password
     key-alias: secured-gateway
 
+ribbon.ServerListRefreshInterval: 5000
+ribbon.NFLoadBalancerPingInterval: 5
+
 spring:
   security:
     oauth2:

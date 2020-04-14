@@ -18,8 +18,6 @@ eureka:
     leaseRenewalIntervalInSeconds: 5
     leaseExpirationDurationInSeconds: 5
 
-ribbon.ServerListRefreshInterval: 5000
-ribbon.NFLoadBalancerPingInterval:
 
 spring:
   rabbitmq:
