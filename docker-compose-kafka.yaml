@@ -92,7 +92,7 @@ services:
   service-discovery-server:
     image: habeebcycle/service-discovery-server:v1
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=docker,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
     networks:
@@ -103,7 +103,7 @@ services:
     ports:
       - "8443:8443"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=docker,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
     networks:
@@ -112,7 +112,7 @@ services:
   service-authorization-server:
     image: habeebcycle/service-authorization-server:v1
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_PROFILES_ACTIVE=docker,kafka
       - CONFIG_SERVER_USR=${CONFIG_SERVER_USR}
       - CONFIG_SERVER_PWD=${CONFIG_SERVER_PWD}
     networks:
@@ -180,6 +180,23 @@ services:
       - KAFKA_ADVERTISED_HOST_NAME=zookeeper
     networks:
       - my-network
+
+  #zipkin server
+  zipkin:
+    image: openzipkin/zipkin:2.12.9
+    networks:
+      - my-network
+    environment:
+      - STORAGE_TYPE=mem #Could be: mysql
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      # If using mysql as storage type, provide the following
+      #- MYSQL_JDBC_URL=mysql  OR  MYSQL_HOST=mysql
+      #- MYSQL_USER={username}
+      #- MYSQL_PASS={password}
+    ports:
+      - 9411:9411
+    depends_on:
+      - kafka
 
 
 networks:

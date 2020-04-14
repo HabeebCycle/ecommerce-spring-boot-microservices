@@ -57,10 +57,3 @@ spring:
 spring:
   profiles: streaming_instance_1
   cloud.stream.bindings.input.consumer.instanceIndex: 1
-
----
-spring:
-  profiles: kafka
-  cloud.stream.defaultBinder: kafka
-
-management.health.rabbit.enabled: false

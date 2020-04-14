@@ -41,3 +41,21 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+
+  #zipkin server
+  zipkin:
+    image: openzipkin/zipkin:2.12.9
+    networks:
+      - my-network
+    environment:
+      - STORAGE_TYPE=mem #Could be: mysql
+      - RABBIT_ADDRESSES=rabbitmq
+      # If using mysql as storage type, provide the following
+      #- MYSQL_JDBC_URL=mysql  OR  MYSQL_HOST=mysql
+      #- MYSQL_USER={username}
+      #- MYSQL_PASS={password}
+    ports:
+      - 9411:9411
+    depends_on:
+      rabbitmq:
+        condition: service_healthy

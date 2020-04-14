@@ -128,10 +128,3 @@ spring:
     output-reviews.producer:
       partition-key-expression: payload.key
       partition-count: 2
-
----
-spring:
-  profiles: kafka
-  cloud.stream.defaultBinder: kafka
-
-management.health.rabbit.enabled: false
