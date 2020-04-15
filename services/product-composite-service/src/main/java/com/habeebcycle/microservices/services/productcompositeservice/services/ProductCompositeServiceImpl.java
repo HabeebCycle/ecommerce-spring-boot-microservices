@@ -7,6 +7,7 @@ import com.habeebcycle.microservices.api.core.review.Review;
 import com.habeebcycle.microservices.services.productcompositeservice.integration.ProductCompositeIntegration;
 import com.habeebcycle.microservices.util.exceptions.NotFoundException;
 import com.habeebcycle.microservices.util.http.ServiceUtil;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.reactor.retry.RetryExceptionWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,9 +85,7 @@ public class ProductCompositeServiceImpl implements ProductCompositeService {
                 ReactiveSecurityContextHolder.getContext().defaultIfEmpty(nullSC),
                 integration.getProduct(productId, delay, faultPercent)
                         .onErrorMap(RetryExceptionWrapper.class, Throwable::getCause)
-                        .onErrorReturn(getProductFallbackValue(productId)),
-                        //.onErrorMap(RetryExceptionWrapper.class, retryException -> retryException.getCause())
-                        //.onErrorReturn(CircuitBreakerOpenException.class, getProductFallbackValue(productId)),
+                        .onErrorReturn(CallNotPermittedException.class, getProductFallbackValue(productId)),
                 integration.getRecommendations(productId).collectList(),
                 integration.getReviews(productId).collectList())
                 .doOnError(ex -> LOG.warn("getCompositeProduct failed: {}", ex.toString()))

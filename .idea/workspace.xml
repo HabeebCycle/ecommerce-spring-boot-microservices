@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/zipkin-tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/product-composite-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/product-composite-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/product-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/product-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/recommendation-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/recommendation-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/review-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/review-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery/service-authorization-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-authorization-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery/service-discovery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-discovery-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery/service-gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery/service-gateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-external-services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-external-services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-kafka.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-kafka.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-partitions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-partitions.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/recommendation-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/recommendation-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/review-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/review-service/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b546f0b3-5e00-44cf-bd3d-7b5e8ca3efad" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/util/target/" />
@@ -60,95 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="docker-compose.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config-repo/application.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review-service.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config-repo/review-service.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zipkin-tables.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/zipkin-tables.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductCompositeServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="89" column="87" selection-start-line="89" selection-start-column="87" selection-end-line="89" selection-end-column="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceGatewayServerApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/ServiceGatewayServerApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceAuthorizationServerApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/java/com/habeebcycle/microservices/discovery/serviceauthorizationserver/ServiceAuthorizationServerApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductCompositeServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/ProductCompositeServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/product-service/src/main/java/com/habeebcycle/microservices/services/productservice/services/ProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="103" selection-start-line="103" selection-end-line="103" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorizationServerConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/java/com/habeebcycle/microservices/discovery/serviceauthorizationserver/config/AuthorizationServerConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="169" column="6" selection-start-line="169" selection-start-column="6" selection-end-line="169" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -660,7 +556,7 @@
       <workItem from="1586659216270" duration="2002000" />
       <workItem from="1586752444270" duration="5339000" />
       <workItem from="1586817522718" duration="4969000" />
-      <workItem from="1586834548177" duration="13054000" />
+      <workItem from="1586834548177" duration="13442000" />
     </task>
     <servers />
   </component>
@@ -697,7 +593,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271899000" />
+    <option name="totallyTimeSpent" value="272287000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,6 +606,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.32963374" />
@@ -729,7 +626,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32963374" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run Dashboard" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.2408435" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32963374" />
@@ -1019,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-repo/application.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1044,13 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/zipkin-tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1075,13 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/ServiceGatewayServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/discovery/service-authorization-server/src/main/java/com/habeebcycle/microservices/discovery/serviceauthorizationserver/ServiceAuthorizationServerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1096,13 +972,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/discovery/service-gateway-server/src/main/java/com/habeebcycle/microservices/discovery/servicegatewayserver/ServiceGatewayServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/product-composite-service/src/main/java/com/habeebcycle/microservices/services/productcompositeservice/services/ProductCompositeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="89" column="87" selection-start-line="89" selection-start-column="87" selection-end-line="89" selection-end-column="87" />
+        <state relative-caret-position="663">
+          <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/zipkin-tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
         </state>
       </provider>
     </entry>
